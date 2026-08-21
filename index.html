@@ -234,6 +234,31 @@
     </div>
   </div>
 
+  <div class="desktop-shell">
+    <div class="desktop-sidebar">
+      <div class="home-intro"><p>Chọn một mục để bắt đầu</p></div>
+      <div class="desktop-nav-card active" data-target="luyentap">
+        <div class="dmicon">文</div>
+        <div class="dtext"><h3>Luyện Tập</h3><p>Bài tập tương tác theo từng bài</p></div>
+        <div class="dbadge">15 bài</div>
+      </div>
+      <div class="desktop-nav-card" data-target="filenghe">
+        <div class="dmicon">耳</div>
+        <div class="dtext"><h3>File Nghe</h3><p>Thư mục Drive từng bài</p></div>
+        <div class="dbadge">15 bài</div>
+      </div>
+      <a class="desktop-nav-card" href="OnTapTongHop_Bai16-30.html">
+        <div class="dmicon">总</div>
+        <div class="dtext"><h3>Ôn Tập Tổng Hợp</h3><p>Từ vựng & ngữ pháp Bài 16–30</p></div>
+      </a>
+      <a class="desktop-nav-card" href="TrongDiemNguPhap_PhanBiet.html">
+        <div class="dmicon">辨</div>
+        <div class="dtext"><h3>Trọng Điểm Ngữ Pháp</h3><p>Phân biệt điểm ngữ pháp dễ nhầm lẫn</p></div>
+      </a>
+    </div>
+    <div class="desktop-content" id="desktop-content"></div>
+  </div>
+
   <footer class="credit">
     <div class="fline1">Mọi thắc mắc vui lòng liên hệ</div>
     <div class="fline2">Zalo <b>0358840411</b> · Thầy Vy</div>
@@ -327,6 +352,47 @@ document.getElementById('btn-goto-filenghe').addEventListener('click', ()=> show
 document.querySelectorAll('.btn-back').forEach(btn=>{
   btn.addEventListener('click', ()=> showScreen('home'));
 });
+
+/* ---------- Nội dung cột phải cho layout máy tính (desktop-shell) ---------- */
+function renderDesktopLuyenTap(){
+  const container = document.getElementById('desktop-content');
+  let html = `<div class="desktop-content-head"><h2>文 Luyện Tập</h2><p>Bài tập tương tác theo từng bài — 15 bài học</p></div>
+    <div class="desktop-divider"></div>
+    <div class="desktop-bai-grid">`;
+  BAI_LIST.forEach((b, idx)=>{
+    html += `<a class="bai-item" href="Bai${b.num}_OnTap_TuVung_NguPhap.html">
+      <div class="bnum">${idx+1}</div>
+      <div class="btext"><div class="btitle-hz hz">Bài ${b.num} · ${b.hz}</div><div class="btitle-vn">${b.vn}</div></div>
+      <div class="barrow">→</div>
+    </a>`;
+  });
+  html += `</div>`;
+  container.innerHTML = html;
+}
+function renderDesktopFileNghe(){
+  const container = document.getElementById('desktop-content');
+  let html = `<div class="desktop-content-head"><h2>耳 File Nghe</h2><p>Thư mục Drive — 15 bài</p></div>
+    <div class="desktop-divider"></div>
+    <div class="desktop-bai-grid">`;
+  BAI_LIST.forEach((b, idx)=>{
+    html += `<a class="bai-item" href="${b.drive}" target="_blank" rel="noopener noreferrer">
+      <div class="bnum">${idx+1}</div>
+      <div class="btext"><div class="btitle-hz hz">Bài ${b.num} · ${b.hz}</div><div class="btitle-vn">${b.vn}</div></div>
+      <div class="barrow">↗</div>
+    </a>`;
+  });
+  html += `</div>`;
+  container.innerHTML = html;
+}
+const desktopRenderers = { luyentap: renderDesktopLuyenTap, filenghe: renderDesktopFileNghe };
+document.querySelectorAll('.desktop-nav-card[data-target]').forEach(card=>{
+  card.addEventListener('click', ()=>{
+    document.querySelectorAll('.desktop-nav-card[data-target]').forEach(c=> c.classList.remove('active'));
+    card.classList.add('active');
+    desktopRenderers[card.dataset.target]();
+  });
+});
+renderDesktopLuyenTap(); // mặc định hiện Luyện Tập khi mở trên máy tính
 </script>
 </body>
 </html>
