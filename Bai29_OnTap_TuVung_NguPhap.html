@@ -492,15 +492,15 @@
               别
               <select class="blank-select" data-blank="b1">
                 <option value="" selected>－选－</option>
-                <option value="0">提 (tí)</option>
+                <option value="0">问 (wèn)</option>
                 <option value="1">说 (shuō)</option>
-                <option value="2">问 (wèn)</option>
+                <option value="2">提 (tí)</option>
               </select>
               了，刚才骑车出去，被一辆
               <select class="blank-select" data-blank="b2">
                 <option value="" selected>－选－</option>
-                <option value="0">三轮车 (sānlúnchē)</option>
-                <option value="1">自行车 (zìxíngchē)</option>
+                <option value="0">自行车 (zìxíngchē)</option>
+                <option value="1">三轮车 (sānlúnchē)</option>
                 <option value="2">摩托车 (mótuōchē)</option>
               </select>
               撞倒了。
@@ -520,9 +520,9 @@
               和腿都被撞青了，真
               <select class="blank-select" data-blank="b4">
                 <option value="" selected>－选－</option>
-                <option value="0">倒霉 (dǎoméi)</option>
+                <option value="0">放心 (fàngxīn)</option>
                 <option value="1">高兴 (gāoxìng)</option>
-                <option value="2">放心 (fàngxīn)</option>
+                <option value="2">倒霉 (dǎoméi)</option>
               </select>
               ！
             </div>
@@ -534,9 +534,9 @@
               以后骑车的时候
               <select class="blank-select" data-blank="b5">
                 <option value="" selected>－选－</option>
-                <option value="0">小心 (xiǎoxīn)</option>
-                <option value="1">着急 (zháojí)</option>
-                <option value="2">生气 (shēngqì)</option>
+                <option value="0">生气 (shēngqì)</option>
+                <option value="1">小心 (xiǎoxīn)</option>
+                <option value="2">着急 (zháojí)</option>
               </select>
               点儿。
             </div>
@@ -548,9 +548,9 @@
               上午逛商店的时候，钱包也
               <select class="blank-select" data-blank="b6">
                 <option value="" selected>－选－</option>
-                <option value="0">被 (bèi)</option>
+                <option value="0">在 (zài)</option>
                 <option value="1">把 (bǎ)</option>
-                <option value="2">在 (zài)</option>
+                <option value="2">被 (bèi)</option>
               </select>
               小偷偷走了，真气人！
             </div>
@@ -716,18 +716,18 @@ const VOCAB = {
   v_jingcha:{hz:'警察',py:'jǐngchá',nghia:'cảnh sát'},
 };
 const BLANKS = [
-  {id:'b1',answer:0,vocab:['v_ti']},
-  {id:'b2',answer:0,vocab:['v_sanlunche']},
+  {id:'b1',answer:2,vocab:['v_ti']},
+  {id:'b2',answer:1,vocab:['v_sanlunche']},
   {id:'b3',answer:0,vocab:['v_gebo']},
-  {id:'b4',answer:0,vocab:['v_daomei']},
-  {id:'b5',answer:0,vocab:['v_xiaoxin']},
-  {id:'b6',answer:0,vocab:['v_bei']},
+  {id:'b4',answer:2,vocab:['v_daomei']},
+  {id:'b5',answer:1,vocab:['v_xiaoxin']},
+  {id:'b6',answer:2,vocab:['v_bei']},
 ];
 const QUESTION_GROUPS = [
   {containerId:'comp-questions',keyPrefix:'comp',questions:[
-    {hz:'直美怎么了？',py:'Zhíměi zěnme le?',options:[{hz:'骑车被三轮车撞倒了',py:'qíchē bèi sānlúnchē zhuàngdǎo le'},{hz:'摔倒了',py:'shuāidǎo le'},{hz:'生病了',py:'shēngbìng le'}],answer:0,vocab:['v_zhuang']},
-    {hz:'直美身上哪里被撞青了？',py:'Zhíměi shēnshang nǎlǐ bèi zhuàngqīng le?',options:[{hz:'胳膊和腿',py:'gēbo hé tuǐ'},{hz:'头和脸',py:'tóu hé liǎn'},{hz:'手和脚',py:'shǒu hé jiǎo'}],answer:0,vocab:['v_gebo','v_tui']},
-    {hz:'直美今天还发生了什么倒霉事？',py:'Zhíměi jīntiān hái fāshēngle shénme dǎoméi shì?',options:[{hz:'钱包被小偷偷走了',py:'qiánbāo bèi xiǎotōu tōuzǒu le'},{hz:'手机丢了',py:'shǒujī diū le'},{hz:'衣服湿了',py:'yīfu shī le'}],answer:0,vocab:['v_xiaotou','v_tou2']},
+    {hz:'直美怎么了？',py:'Zhíměi zěnme le?',options:[{hz:'摔倒了',py:'shuāidǎo le'},{hz:'骑车被三轮车撞倒了',py:'qíchē bèi sānlúnchē zhuàngdǎo le'},{hz:'生病了',py:'shēngbìng le'}],answer:1,vocab:['v_zhuang']},
+    {hz:'直美身上哪里被撞青了？',py:'Zhíměi shēnshang nǎlǐ bèi zhuàngqīng le?',options:[{hz:'胳膊和腿',py:'gēbo hé tuǐ'},{hz:'手和脚',py:'shǒu hé jiǎo'},{hz:'头和脸',py:'tóu hé liǎn'}],answer:0,vocab:['v_gebo','v_tui']},
+    {hz:'直美今天还发生了什么倒霉事？',py:'Zhíměi jīntiān hái fāshēngle shénme dǎoméi shì?',options:[{hz:'手机丢了',py:'shǒujī diū le'},{hz:'衣服湿了',py:'yīfu shī le'},{hz:'钱包被小偷偷走了',py:'qiánbāo bèi xiǎotōu tōuzǒu le'}],answer:2,vocab:['v_xiaotou','v_tou2']},
   ]},
 ];
 const CLASSIFY_G1 = {

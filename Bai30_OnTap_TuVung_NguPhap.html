@@ -491,9 +491,9 @@
               下星期我就要回国了，我来
               <select class="blank-select" data-blank="b1">
                 <option value="" selected>－选－</option>
-                <option value="0">向 (xiàng)</option>
+                <option value="0">对 (duì)</option>
                 <option value="1">跟 (gēn)</option>
-                <option value="2">对 (duì)</option>
+                <option value="2">向 (xiàng)</option>
               </select>
               老师告别。
             </div>
@@ -505,9 +505,9 @@
               老师问我
               <select class="blank-select" data-blank="b2">
                 <option value="" selected>－选－</option>
-                <option value="0">行李 (xíngli)</option>
-                <option value="1">护照 (hùzhào)</option>
-                <option value="2">机票 (jīpiào)</option>
+                <option value="0">机票 (jīpiào)</option>
+                <option value="1">行李 (xíngli)</option>
+                <option value="2">护照 (hùzhào)</option>
               </select>
               都收拾好了吗，我说都收拾好了。
             </div>
@@ -519,16 +519,16 @@
               同学们为我
               <select class="blank-select" data-blank="b3">
                 <option value="" selected>－选－</option>
-                <option value="0">饯行 (jiànxíng)</option>
-                <option value="1">庆祝 (qìngzhù)</option>
-                <option value="2">道歉 (dàoqiàn)</option>
+                <option value="0">庆祝 (qìngzhù)</option>
+                <option value="1">道歉 (dàoqiàn)</option>
+                <option value="2">饯行 (jiànxíng)</option>
               </select>
               ，大家一起
               <select class="blank-select" data-blank="b4">
                 <option value="" selected>－选－</option>
                 <option value="0">干杯 (gānbēi)</option>
-                <option value="1">吃饭 (chīfàn)</option>
-                <option value="2">唱歌 (chànggē)</option>
+                <option value="1">唱歌 (chànggē)</option>
+                <option value="2">吃饭 (chīfàn)</option>
               </select>
               ，祝我一路平安。
             </div>
@@ -540,9 +540,9 @@
               大家都说很
               <select class="blank-select" data-blank="b5">
                 <option value="" selected>－选－</option>
-                <option value="0">舍不得 (shěbude)</option>
-                <option value="1">高兴 (gāoxìng)</option>
-                <option value="2">着急 (zháojí)</option>
+                <option value="0">高兴 (gāoxìng)</option>
+                <option value="1">着急 (zháojí)</option>
+                <option value="2">舍不得 (shěbude)</option>
               </select>
               和我分开，希望以后还能再见面。
             </div>
@@ -554,8 +554,8 @@
               该
               <select class="blank-select" data-blank="b6">
                 <option value="" selected>－选－</option>
-                <option value="0">登 (dēng)</option>
-                <option value="1">坐 (zuò)</option>
+                <option value="0">坐 (zuò)</option>
+                <option value="1">登 (dēng)</option>
                 <option value="2">开 (kāi)</option>
               </select>
               飞机了，我得去办登机手续了。
@@ -698,18 +698,18 @@ const VOCAB = {
   v_shunfeng:{hz:'顺风',py:'shùnfēng',nghia:'xuôi gió, có một chuyến đi tốt đẹp'},
 };
 const BLANKS = [
-  {id:'b1',answer:0,vocab:['v_xiang']},
-  {id:'b2',answer:0,vocab:['v_xingli']},
-  {id:'b3',answer:0,vocab:['v_jianxing']},
+  {id:'b1',answer:2,vocab:['v_xiang']},
+  {id:'b2',answer:1,vocab:['v_xingli']},
+  {id:'b3',answer:2,vocab:['v_jianxing']},
   {id:'b4',answer:0,vocab:['v_ganbei']},
-  {id:'b5',answer:0,vocab:['v_shebude']},
-  {id:'b6',answer:0,vocab:['v_deng']},
+  {id:'b5',answer:2,vocab:['v_shebude']},
+  {id:'b6',answer:1,vocab:['v_deng']},
 ];
 const QUESTION_GROUPS = [
   {containerId:'comp-questions',keyPrefix:'comp',questions:[
-    {hz:'莉莉下星期要做什么？',py:'Lìlì xià xīngqī yào zuò shénme?',options:[{hz:'回国',py:'huíguó'},{hz:'搬家',py:'bānjiā'},{hz:'换工作',py:'huàn gōngzuò'}],answer:0,vocab:[]},
-    {hz:'同学们为莉莉做了什么？',py:'Tóngxuémen wèi Lìlì zuòle shénme?',options:[{hz:'饯行，祝她一路平安',py:'jiànxíng, zhù tā yílù píng\'ān'},{hz:'送她很多礼物',py:'sòng tā hěnduō lǐwù'},{hz:'写信给她',py:'xiěxìn gěi tā'}],answer:0,vocab:['v_jianxing','v_pingan']},
-    {hz:'大家心情怎么样？',py:'Dàjiā xīnqíng zěnmeyàng?',options:[{hz:'舍不得莉莉走',py:'shěbude Lìlì zǒu'},{hz:'很高兴',py:'hěn gāoxìng'},{hz:'很生气',py:'hěn shēngqì'}],answer:0,vocab:['v_shebude']},
+    {hz:'莉莉下星期要做什么？',py:'Lìlì xià xīngqī yào zuò shénme?',options:[{hz:'回国',py:'huíguó'},{hz:'换工作',py:'huàn gōngzuò'},{hz:'搬家',py:'bānjiā'}],answer:0,vocab:[]},
+    {hz:'同学们为莉莉做了什么？',py:'Tóngxuémen wèi Lìlì zuòle shénme?',options:[{hz:'写信给她',py:'xiěxìn gěi tā'},{hz:'送她很多礼物',py:'sòng tā hěnduō lǐwù'},{hz:'饯行，祝她一路平安',py:'jiànxíng, zhù tā yílù píng\'ān'}],answer:2,vocab:['v_jianxing','v_pingan']},
+    {hz:'大家心情怎么样？',py:'Dàjiā xīnqíng zěnmeyàng?',options:[{hz:'很生气',py:'hěn shēngqì'},{hz:'舍不得莉莉走',py:'shěbude Lìlì zǒu'},{hz:'很高兴',py:'hěn gāoxìng'}],answer:1,vocab:['v_shebude']},
   ]},
 ];
 const TRUEFALSE_G1 = {
@@ -723,12 +723,12 @@ let orderStateG1=[];
 const MULTI_G1 = {
   hz:'Câu nào là câu mang nghĩa bị động ĐÚNG cấu trúc? (có thể chọn nhiều đáp án)',
   options:[
-    {hz:'衣服洗干净了。',py:'Yīfu xǐ gānjìng le.'},
-    {hz:'衣服洗。',py:'Yīfu xǐ.'},
     {hz:'信寄去了。',py:'Xìn jìqù le.'},
+    {hz:'衣服洗。',py:'Yīfu xǐ.'},
     {hz:'洗干净衣服了。',py:'Xǐ gānjìng yīfu le.'},
+    {hz:'衣服洗干净了。',py:'Yīfu xǐ gānjìng le.'}
   ],
-  correctIndices:[0,2], vocab:[]
+  correctIndices:[0,3], vocab:[]
 };
 let multiStateG1 = new Set();
 let studentName='';

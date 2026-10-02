@@ -498,9 +498,9 @@
               客厅的门
               <select class="blank-select" data-blank="b1">
                 <option value="" selected>－选－</option>
-                <option value="0">开 (kāi)</option>
-                <option value="1">放 (fàng)</option>
-                <option value="2">挂 (guà)</option>
+                <option value="0">放 (fàng)</option>
+                <option value="1">挂 (guà)</option>
+                <option value="2">开 (kāi)</option>
               </select>
               着，电视也开着，可是没有人在看。
             </div>
@@ -513,15 +513,15 @@
               <select class="blank-select" data-blank="b2">
                 <option value="" selected>－选－</option>
                 <option value="0">放 (fàng)</option>
-                <option value="1">躺 (tǎng)</option>
-                <option value="2">趴 (pā)</option>
+                <option value="1">趴 (pā)</option>
+                <option value="2">躺 (tǎng)</option>
               </select>
               着很多书，摆得很
               <select class="blank-select" data-blank="b3">
                 <option value="" selected>－选－</option>
-                <option value="0">整齐 (zhěngqí)</option>
-                <option value="1">认真 (rènzhēn)</option>
-                <option value="2">生气 (shēngqì)</option>
+                <option value="0">生气 (shēngqì)</option>
+                <option value="1">整齐 (zhěngqí)</option>
+                <option value="2">认真 (rènzhēn)</option>
               </select>
               。
             </div>
@@ -533,16 +533,16 @@
               门口
               <select class="blank-select" data-blank="b4">
                 <option value="" selected>－选－</option>
-                <option value="0">挂 (guà)</option>
-                <option value="1">摆 (bǎi)</option>
-                <option value="2">放 (fàng)</option>
+                <option value="0">摆 (bǎi)</option>
+                <option value="1">放 (fàng)</option>
+                <option value="2">挂 (guà)</option>
               </select>
               着一个牌子，上面写着"
               <select class="blank-select" data-blank="b5">
                 <option value="" selected>－选－</option>
-                <option value="0">勿 (wù)</option>
-                <option value="1">别 (bié)</option>
-                <option value="2">不 (bù)</option>
+                <option value="0">不 (bù)</option>
+                <option value="1">勿 (wù)</option>
+                <option value="2">别 (bié)</option>
               </select>
               吸烟"。
             </div>
@@ -773,11 +773,11 @@ const VOCAB = {
 
 /* ===================== DỮ LIỆU CÁC BLANK TRONG ĐOẠN VĂN 1.1 ===================== */
 const BLANKS = [
-  { id:'b1', answer:0, vocab:['v_kai'] },
+  { id:'b1', answer:2, vocab:['v_kai'] },
   { id:'b2', answer:0, vocab:['v_fang'] },
-  { id:'b3', answer:0, vocab:['v_zhengqi'] },
-  { id:'b4', answer:0, vocab:['v_gua','v_paizi'] },
-  { id:'b5', answer:0, vocab:['v_wu'] },
+  { id:'b3', answer:1, vocab:['v_zhengqi'] },
+  { id:'b4', answer:2, vocab:['v_gua','v_paizi'] },
+  { id:'b5', answer:1, vocab:['v_wu'] },
   { id:'b6', answer:0, vocab:['v_pa'] },
 ];
 
@@ -788,10 +788,10 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'客厅里，电视开着可是发生了什么？', py:'Kètīng lǐ, diànshì kāizhe kěshì fāshēngle shénme?',
         options:[
-          {hz:'没有人在看', py:'méiyǒu rén zài kàn'},
           {hz:'妈妈在看', py:'māma zài kàn'},
-          {hz:'很多人在看', py:'hěnduō rén zài kàn'}
-        ], answer:0, vocab:['v_kai'] },
+          {hz:'很多人在看', py:'hěnduō rén zài kàn'},
+          {hz:'没有人在看', py:'méiyǒu rén zài kàn'}
+        ], answer:2, vocab:['v_kai'] },
       { hz:'书架上的书摆得怎么样？', py:'Shūjià shàng de shū bǎi de zěnmeyàng?',
         options:[
           {hz:'很整齐', py:'hěn zhěngqí'},
@@ -800,10 +800,10 @@ const QUESTION_GROUPS = [
         ], answer:0, vocab:['v_zhengqi','v_bai'] },
       { hz:'小猫在窗台上做什么？', py:'Xiǎomāo zài chuāngtái shàng zuò shénme?',
         options:[
-          {hz:'趴着睡觉', py:'pāzhe shuìjiào'},
+          {hz:'站着叫', py:'zhànzhe jiào'},
           {hz:'坐着吃饭', py:'zuòzhe chīfàn'},
-          {hz:'站着叫', py:'zhànzhe jiào'}
-        ], answer:0, vocab:['v_pa','v_chuangtai'] },
+          {hz:'趴着睡觉', py:'pāzhe shuìjiào'}
+        ], answer:2, vocab:['v_pa','v_chuangtai'] },
     ]
   },
   {
@@ -811,10 +811,10 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'他___工作。 (非常努力) Chọn cách diễn đạt đúng:', py:'',
         options:[
-          {hz:'非常努力地工作。', py:'Tā fēicháng nǔlì de gōngzuò.'},
           {hz:'非常地努力工作。', py:'Tā fēicháng de nǔlì gōngzuò.'},
+          {hz:'非常努力地工作。', py:'Tā fēicháng nǔlì de gōngzuò.'},
           {hz:'努力非常地工作。', py:'Tā nǔlì fēicháng de gōngzuò.'}
-        ], answer:0, vocab:['v_de_zhu'] },
+        ], answer:1, vocab:['v_de_zhu'] },
     ]
   },
 ];
@@ -862,12 +862,12 @@ let trueFalseAnswerG2;
 const MULTI_G3 = {
   hz:'Câu nào dùng ĐÚNG hình thức lặp tính từ? (có thể chọn nhiều đáp án)',
   options:[
-    {hz:'每天爷爷都早早儿地起床。', py:'Měitiān yéye dōu zǎozǎor de qǐchuáng.'},
     {hz:'她的头发长长。', py:'Tā de tóufa chángcháng.'},
-    {hz:'货架上整整齐齐地摆着各种东西。', py:'Huòjià shàng zhěngzhěngqíqí de bǎizhe gèzhǒng dōngxi.'},
-    {hz:'漂漂亮亮大厅里立着货架。', py:'Piàopiàoliàngliàng dàtīng lǐ lìzhe huòjià.'}
+    {hz:'每天爷爷都早早儿地起床。', py:'Měitiān yéye dōu zǎozǎor de qǐchuáng.'},
+    {hz:'漂漂亮亮大厅里立着货架。', py:'Piàopiàoliàngliàng dàtīng lǐ lìzhe huòjià.'},
+    {hz:'货架上整整齐齐地摆着各种东西。', py:'Huòjià shàng zhěngzhěngqíqí de bǎizhe gèzhǒng dōngxi.'}
   ],
-  correctIndices:[0,2],
+  correctIndices:[1,3],
   vocab:['v_zhengqi']
 };
 let multiStateG3 = new Set();

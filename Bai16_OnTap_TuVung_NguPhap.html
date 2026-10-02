@@ -419,23 +419,23 @@
               今天商店的东西
               <select class="blank-select" data-blank="b1">
                 <option value="" selected>－选－</option>
-                <option value="0">正在 (zhèngzài)</option>
-                <option value="1">已经 (yǐjīng)</option>
-                <option value="2">还 (hái)</option>
+                <option value="0">还 (hái)</option>
+                <option value="1">正在 (zhèngzài)</option>
+                <option value="2">已经 (yǐjīng)</option>
               </select>
               打折，顾客很多，
               <select class="blank-select" data-blank="b2">
                 <option value="" selected>－选－</option>
-                <option value="0">有的 (yǒude)</option>
+                <option value="0">一起 (yìqǐ)</option>
                 <option value="1">所有 (suǒyǒu)</option>
-                <option value="2">一起 (yìqǐ)</option>
+                <option value="2">有的 (yǒude)</option>
               </select>
               在挑东西，
               <select class="blank-select" data-blank="b3">
                 <option value="" selected>－选－</option>
-                <option value="0">大家 (dàjiā)</option>
-                <option value="1">有的 (yǒude)</option>
-                <option value="2">一边 (yìbiān)</option>
+                <option value="0">有的 (yǒude)</option>
+                <option value="1">一边 (yìbiān)</option>
+                <option value="2">大家 (dàjiā)</option>
               </select>
               在排队交钱。
             </div>
@@ -447,9 +447,9 @@
               小雨最近很忙，她
               <select class="blank-select" data-blank="b4">
                 <option value="" selected>－选－</option>
-                <option value="0">正在 (zhèngzài)</option>
-                <option value="1">刚才 (gāngcái)</option>
-                <option value="2">已经 (yǐjīng)</option>
+                <option value="0">刚才 (gāngcái)</option>
+                <option value="1">已经 (yǐjīng)</option>
+                <option value="2">正在 (zhèngzài)</option>
               </select>
               找工作。
             </div>
@@ -461,8 +461,8 @@
               <select class="blank-select" data-blank="b5">
                 <option value="" selected>－选－</option>
                 <option value="0">明年 (míngnián)</option>
-                <option value="1">现在 (xiànzài)</option>
-                <option value="2">刚才 (gāngcái)</option>
+                <option value="1">刚才 (gāngcái)</option>
+                <option value="2">现在 (xiànzài)</option>
               </select>
               我去她那儿的时候，她正在给一家公司打电话。
             </div>
@@ -474,9 +474,9 @@
               外边正下雨，莉莉跟朋友们在房间里
               <select class="blank-select" data-blank="b6">
                 <option value="" selected>－选－</option>
-                <option value="0">正在 (zhèngzài)</option>
-                <option value="1">一边 (yìbiān)</option>
-                <option value="2">有的 (yǒude)</option>
+                <option value="0">有的 (yǒude)</option>
+                <option value="1">正在 (zhèngzài)</option>
+                <option value="2">一边 (yìbiān)</option>
               </select>
               喝咖啡一边聊天儿。
             </div>
@@ -677,12 +677,12 @@ const VOCAB = {
 
 /* ===================== DỮ LIỆU CÁC BLANK TRONG ĐOẠN VĂN 1.1 ===================== */
 const BLANKS = [
-  { id:'b1', answer:0, vocab:['v_zhengzai','v_dazhe'] },
-  { id:'b2', answer:0, vocab:['v_youde','v_tiao'] },
-  { id:'b3', answer:1, vocab:['v_youde','v_paidui','v_jiao2'] },
-  { id:'b4', answer:0, vocab:['v_zhengzai','v_zhao'] },
-  { id:'b5', answer:2, vocab:['v_gangcai','v_dadianhua'] },
-  { id:'b6', answer:1, vocab:['v_yibian','v_liaotianr'] },
+  { id:'b1', answer:1, vocab:['v_zhengzai','v_dazhe'] },
+  { id:'b2', answer:2, vocab:['v_youde','v_tiao'] },
+  { id:'b3', answer:0, vocab:['v_youde','v_paidui','v_jiao2'] },
+  { id:'b4', answer:2, vocab:['v_zhengzai','v_zhao'] },
+  { id:'b5', answer:1, vocab:['v_gangcai','v_dadianhua'] },
+  { id:'b6', answer:2, vocab:['v_yibian','v_liaotianr'] },
 ];
 
 /* ===================== CÁC NHÓM CÂU HỎI (MCQ) ===================== */
@@ -692,16 +692,16 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'商店里的顾客现在在做什么？', py:'Shāngdiàn lǐ de gùkè xiànzài zài zuò shénme?',
         options:[
-          {hz:'有的挑东西，有的排队交钱', py:'yǒude tiāo dōngxi, yǒude páiduì jiāo qián'},
           {hz:'都在睡觉', py:'dōu zài shuìjiào'},
+          {hz:'有的挑东西，有的排队交钱', py:'yǒude tiāo dōngxi, yǒude páiduì jiāo qián'},
           {hz:'都在打电话', py:'dōu zài dǎ diànhuà'}
-        ], answer:0, vocab:['v_guke','v_youde','v_tiao','v_paidui'] },
+        ], answer:1, vocab:['v_guke','v_youde','v_tiao','v_paidui'] },
       { hz:'小雨最近为什么很忙？', py:'Xiǎoyǔ zuìjìn wèishénme hěn máng?',
         options:[
-          {hz:'因为她正在找工作', py:'yīnwèi tā zhèngzài zhǎo gōngzuò'},
+          {hz:'因为商店在打折', py:'yīnwèi shāngdiàn zài dǎzhé'},
           {hz:'因为她在旅行', py:'yīnwèi tā zài lǚxíng'},
-          {hz:'因为商店在打折', py:'yīnwèi shāngdiàn zài dǎzhé'}
-        ], answer:0, vocab:['v_zhengzai','v_zhao'] },
+          {hz:'因为她正在找工作', py:'yīnwèi tā zhèngzài zhǎo gōngzuò'}
+        ], answer:2, vocab:['v_zhengzai','v_zhao'] },
       { hz:'莉莉和朋友们正在做什么？', py:'Lìlì hé péngyoumen zhèngzài zuò shénme?',
         options:[
           {hz:'一边喝咖啡一边聊天儿', py:'yìbiān hē kāfēi yìbiān liáotiānr'},
@@ -715,16 +715,16 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'Sắp xếp thành câu đúng từ các từ: 呢 / 正在 / 打电话 / 他', py:'',
         options:[
+          {hz:'他打电话正在呢。', py:'Tā dǎ diànhuà zhèngzài ne.'},
           {hz:'他正在打电话呢。', py:'Tā zhèngzài dǎ diànhuà ne.'},
-          {hz:'正在他打电话呢。', py:'Zhèngzài tā dǎ diànhuà ne.'},
-          {hz:'他打电话正在呢。', py:'Tā dǎ diànhuà zhèngzài ne.'}
-        ], answer:0, vocab:['v_zhengzai','v_dadianhua'] },
+          {hz:'正在他打电话呢。', py:'Zhèngzài tā dǎ diànhuà ne.'}
+        ], answer:1, vocab:['v_zhengzai','v_dadianhua'] },
       { hz:'Câu nào SAI về ngữ pháp?', py:'',
         options:[
-          {hz:'他不正在睡觉。', py:'Tā bú zhèngzài shuìjiào.'},
+          {hz:'他没有睡觉。', py:'Tā méiyǒu shuìjiào.'},
           {hz:'他没在睡觉。', py:'Tā méi zài shuìjiào.'},
-          {hz:'他没有睡觉。', py:'Tā méiyǒu shuìjiào.'}
-        ], answer:0, vocab:['v_zhengzai'] },
+          {hz:'他不正在睡觉。', py:'Tā bú zhèngzài shuìjiào.'}
+        ], answer:2, vocab:['v_zhengzai'] },
     ]
   },
   {
@@ -732,16 +732,16 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'这个鞋店很大，___在看鞋，___在试鞋。 (Chọn cấu trúc đúng)', py:'',
         options:[
+          {hz:'正在...正在', py:'zhèngzài...zhèngzài'},
           {hz:'有的...有的', py:'yǒude...yǒude'},
-          {hz:'一边...一边', py:'yìbiān...yìbiān'},
-          {hz:'正在...正在', py:'zhèngzài...zhèngzài'}
-        ], answer:0, vocab:['v_youde'] },
+          {hz:'一边...一边', py:'yìbiān...yìbiān'}
+        ], answer:1, vocab:['v_youde'] },
       { hz:'Câu nào dùng SAI cấu trúc 有的……有的……？', py:'',
         options:[
-          {hz:'我有的喜欢吃辣的。', py:'Wǒ yǒude xǐhuan chī là de.'},
+          {hz:'同学们有的喜欢唱歌，有的喜欢跳舞。', py:'Tóngxuémen yǒude xǐhuan chànggē, yǒude xǐhuan tiàowǔ.'},
           {hz:'苹果有的红，有的绿。', py:'Píngguǒ yǒude hóng, yǒude lǜ.'},
-          {hz:'同学们有的喜欢唱歌，有的喜欢跳舞。', py:'Tóngxuémen yǒude xǐhuan chànggē, yǒude xǐhuan tiàowǔ.'}
-        ], answer:0, vocab:['v_youde'] },
+          {hz:'我有的喜欢吃辣的。', py:'Wǒ yǒude xǐhuan chī là de.'}
+        ], answer:2, vocab:['v_youde'] },
     ]
   },
   {
@@ -749,16 +749,16 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'Sắp xếp thành câu đúng: 一边 / 一边 / 喝咖啡 / 聊天儿 / 莉莉跟朋友们', py:'',
         options:[
+          {hz:'莉莉跟朋友们喝咖啡一边聊天儿一边。', py:'Lìlì gēn péngyoumen hē kāfēi yìbiān liáotiānr yìbiān.'},
           {hz:'莉莉跟朋友们一边喝咖啡一边聊天儿。', py:'Lìlì gēn péngyoumen yìbiān hē kāfēi yìbiān liáotiānr.'},
-          {hz:'一边莉莉跟朋友们喝咖啡聊天儿一边。', py:'Yìbiān Lìlì gēn péngyoumen hē kāfēi liáotiānr yìbiān.'},
-          {hz:'莉莉跟朋友们喝咖啡一边聊天儿一边。', py:'Lìlì gēn péngyoumen hē kāfēi yìbiān liáotiānr yìbiān.'}
-        ], answer:0, vocab:['v_yibian','v_liaotianr'] },
+          {hz:'一边莉莉跟朋友们喝咖啡聊天儿一边。', py:'Yìbiān Lìlì gēn péngyoumen hē kāfēi liáotiānr yìbiān.'}
+        ], answer:1, vocab:['v_yibian','v_liaotianr'] },
       { hz:'Câu nào dùng SAI cấu trúc 一边……一边……？', py:'',
         options:[
-          {hz:'我一边看书，他一边写字。', py:'Wǒ yìbiān kànshū, tā yìbiān xiězì.'},
+          {hz:'她一边唱歌，一边跳舞。', py:'Tā yìbiān chànggē, yìbiān tiàowǔ.'},
           {hz:'我一边吃饭，一边看电视。', py:'Wǒ yìbiān chīfàn, yìbiān kàn diànshì.'},
-          {hz:'她一边唱歌，一边跳舞。', py:'Tā yìbiān chànggē, yìbiān tiàowǔ.'}
-        ], answer:0, vocab:['v_yibian'] },
+          {hz:'我一边看书，他一边写字。', py:'Wǒ yìbiān kànshū, tā yìbiān xiězì.'}
+        ], answer:2, vocab:['v_yibian'] },
     ]
   },
 ];

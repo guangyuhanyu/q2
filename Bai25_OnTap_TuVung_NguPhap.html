@@ -498,16 +498,16 @@
               周末我们班打算去
               <select class="blank-select" data-blank="b1">
                 <option value="" selected>－选－</option>
-                <option value="0">郊游 (jiāoyóu)</option>
-                <option value="1">旅行 (lǚxíng)</option>
-                <option value="2">开会 (kāihuì)</option>
+                <option value="0">开会 (kāihuì)</option>
+                <option value="1">郊游 (jiāoyóu)</option>
+                <option value="2">旅行 (lǚxíng)</option>
               </select>
               ，你有
               <select class="blank-select" data-blank="b2">
                 <option value="" selected>－选－</option>
                 <option value="0">空儿 (kòngr)</option>
-                <option value="1">意思 (yìsi)</option>
-                <option value="2">座位 (zuòwèi)</option>
+                <option value="1">座位 (zuòwèi)</option>
+                <option value="2">意思 (yìsi)</option>
               </select>
               吗？
             </div>
@@ -519,9 +519,9 @@
               要是你有时间的
               <select class="blank-select" data-blank="b3">
                 <option value="" selected>－选－</option>
-                <option value="0">话 (huà)</option>
-                <option value="1">时候 (shíhou)</option>
-                <option value="2">时间 (shíjiān)</option>
+                <option value="0">时间 (shíjiān)</option>
+                <option value="1">话 (huà)</option>
+                <option value="2">时候 (shíhou)</option>
               </select>
               ，我想邀请你一起去。
             </div>
@@ -540,9 +540,9 @@
               会玩儿得很开心，你放心吧，不会
               <select class="blank-select" data-blank="b5">
                 <option value="" selected>－选－</option>
-                <option value="0">耽误 (dānwu)</option>
-                <option value="1">忘记 (wàngjì)</option>
-                <option value="2">打扰 (dǎrǎo)</option>
+                <option value="0">打扰 (dǎrǎo)</option>
+                <option value="1">耽误 (dānwu)</option>
+                <option value="2">忘记 (wàngjì)</option>
               </select>
               你的其他约会。
             </div>
@@ -787,11 +787,11 @@ const VOCAB = {
 
 /* ===================== DỮ LIỆU CÁC BLANK TRONG ĐOẠN VĂN 1.1 ===================== */
 const BLANKS = [
-  { id:'b1', answer:0, vocab:['v_jiaoyou'] },
+  { id:'b1', answer:1, vocab:['v_jiaoyou'] },
   { id:'b2', answer:0, vocab:['v_kongr'] },
-  { id:'b3', answer:0, vocab:['v_dehua'] },
+  { id:'b3', answer:1, vocab:['v_dehua'] },
   { id:'b4', answer:0, vocab:['v_kending'] },
-  { id:'b5', answer:0, vocab:['v_danwu'] },
+  { id:'b5', answer:1, vocab:['v_danwu'] },
   { id:'b6', answer:0, vocab:['v_changtu'] },
 ];
 
@@ -802,10 +802,10 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'周末班级打算做什么？', py:'Zhōumò bānjí dǎsuàn zuò shénme?',
         options:[
-          {hz:'去郊游', py:'qù jiāoyóu'},
           {hz:'去上课', py:'qù shàngkè'},
+          {hz:'去郊游', py:'qù jiāoyóu'},
           {hz:'去考试', py:'qù kǎoshì'}
-        ], answer:0, vocab:['v_jiaoyou'] },
+        ], answer:1, vocab:['v_jiaoyou'] },
       { hz:'说话人为什么邀请对方？', py:'Shuōhuàrén wèishénme yāoqǐng duìfāng?',
         options:[
           {hz:'因为对方可能有空儿', py:'yīnwèi duìfāng kěnéng yǒu kòngr'},
@@ -814,10 +814,10 @@ const QUESTION_GROUPS = [
         ], answer:0, vocab:['v_kongr','v_yaoqing'] },
       { hz:'为什么要早点儿出发？', py:'Wèishénme yào zǎodiǎnr chūfā?',
         options:[
-          {hz:'因为路比较远，是长途', py:'yīnwèi lù bǐjiào yuǎn, shì chángtú'},
+          {hz:'因为天气不好', py:'yīnwèi tiānqì bù hǎo'},
           {hz:'因为会堵车', py:'yīnwèi huì dǔchē'},
-          {hz:'因为天气不好', py:'yīnwèi tiānqì bù hǎo'}
-        ], answer:0, vocab:['v_changtu'] },
+          {hz:'因为路比较远，是长途', py:'yīnwèi lù bǐjiào yuǎn, shì chángtú'}
+        ], answer:2, vocab:['v_changtu'] },
     ]
   },
   {
@@ -825,10 +825,10 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'电影里的对话太快了，我可能___。 (Chọn cách diễn đạt đúng)', py:'',
         options:[
-          {hz:'听不懂', py:'tīng bu dǒng'},
           {hz:'不听懂', py:'bù tīng dǒng'},
+          {hz:'听不懂', py:'tīng bu dǒng'},
           {hz:'听懂不', py:'tīng dǒng bù'}
-        ], answer:0, vocab:['v_duihua'] },
+        ], answer:1, vocab:['v_duihua'] },
     ]
   },
 ];
@@ -877,12 +877,12 @@ let wordTapAnswerG2;
 const MULTI_G3 = {
   hz:'Câu nào là câu hỏi tu từ (phản vấn) ĐÚNG cấu trúc? (có thể chọn nhiều đáp án)',
   options:[
+    {hz:'你是学生，怎么呢能不做作业？', py:'Nǐ shì xuésheng, zěnme ne néng bú zuò zuòyè?'},
     {hz:'这么早，我怎么起得来呢？', py:'Zhème zǎo, wǒ zěnme qǐ de lái ne?'},
-    {hz:'你是学生，怎么能不做作业呢？', py:'Nǐ shì xuésheng, zěnme néng bú zuò zuòyè ne?'},
     {hz:'这么早，我怎么呢起得来？', py:'Zhème zǎo, wǒ zěnme ne qǐ de lái?'},
-    {hz:'你是学生，怎么呢能不做作业？', py:'Nǐ shì xuésheng, zěnme ne néng bú zuò zuòyè?'}
+    {hz:'你是学生，怎么能不做作业呢？', py:'Nǐ shì xuésheng, zěnme néng bú zuò zuòyè ne?'}
   ],
-  correctIndices:[0,1],
+  correctIndices:[1,3],
   vocab:[]
 };
 let multiStateG3 = new Set();

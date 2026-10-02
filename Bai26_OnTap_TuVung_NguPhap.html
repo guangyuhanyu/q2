@@ -506,8 +506,8 @@
               后，英男打算去旅行，老师
               <select class="blank-select" data-blank="b2">
                 <option value="" selected>－选－</option>
-                <option value="0">建议 (jiànyì)</option>
-                <option value="1">希望 (xīwàng)</option>
+                <option value="0">希望 (xīwàng)</option>
+                <option value="1">建议 (jiànyì)</option>
                 <option value="2">同意 (tóngyì)</option>
               </select>
               他去西安看看。
@@ -521,14 +521,14 @@
               <select class="blank-select" data-blank="b3">
                 <option value="" selected>－选－</option>
                 <option value="0">还 (hái)</option>
-                <option value="1">很 (hěn)</option>
-                <option value="2">非常 (fēicháng)</option>
+                <option value="1">非常 (fēicháng)</option>
+                <option value="2">很 (hěn)</option>
               </select>
               热，不过看天气
               <select class="blank-select" data-blank="b4">
                 <option value="" selected>－选－</option>
-                <option value="0">预报 (yùbào)</option>
-                <option value="1">情况 (qíngkuàng)</option>
+                <option value="0">情况 (qíngkuàng)</option>
+                <option value="1">预报 (yùbào)</option>
                 <option value="2">新闻 (xīnwén)</option>
               </select>
               ，今年大同也不比北京凉快。
@@ -542,8 +542,8 @@
               <select class="blank-select" data-blank="b5">
                 <option value="" selected>－选－</option>
                 <option value="0">方便 (fāngbiàn)</option>
-                <option value="1">容易 (róngyì)</option>
-                <option value="2">快 (kuài)</option>
+                <option value="1">快 (kuài)</option>
+                <option value="2">容易 (róngyì)</option>
               </select>
               。
             </div>
@@ -555,9 +555,9 @@
               英男
               <select class="blank-select" data-blank="b6">
                 <option value="" selected>－选－</option>
-                <option value="0">同意 (tóngyì)</option>
-                <option value="1">希望 (xīwàng)</option>
-                <option value="2">商量 (shāngliang)</option>
+                <option value="0">希望 (xīwàng)</option>
+                <option value="1">商量 (shāngliang)</option>
+                <option value="2">同意 (tóngyì)</option>
               </select>
               老师的建议，决定去西安旅行。
             </div>
@@ -798,11 +798,11 @@ const VOCAB = {
 /* ===================== DỮ LIỆU CÁC BLANK TRONG ĐOẠN VĂN 1.1 ===================== */
 const BLANKS = [
   { id:'b1', answer:0, vocab:['v_jieshu'] },
-  { id:'b2', answer:0, vocab:['v_jianyi'] },
+  { id:'b2', answer:1, vocab:['v_jianyi'] },
   { id:'b3', answer:0, vocab:['v_hai'] },
-  { id:'b4', answer:0, vocab:['v_yubao'] },
+  { id:'b4', answer:1, vocab:['v_yubao'] },
   { id:'b5', answer:0, vocab:['v_fangbian'] },
-  { id:'b6', answer:0, vocab:['v_tongyi'] },
+  { id:'b6', answer:2, vocab:['v_tongyi'] },
 ];
 
 /* ===================== CÁC NHÓM CÂU HỎI MCQ (chuẩn) ===================== */
@@ -818,15 +818,15 @@ const QUESTION_GROUPS = [
         ], answer:0, vocab:['v_jieshu'] },
       { hz:'老师建议英男去哪儿？', py:'Lǎoshī jiànyì Yīngnán qù nǎr?',
         options:[
+          {hz:'北京', py:'Běijīng'},
           {hz:'西安', py:'Xī\'ān'},
-          {hz:'大同', py:'Dàtóng'},
-          {hz:'北京', py:'Běijīng'}
-        ], answer:0, vocab:['v_jianyi'] },
+          {hz:'大同', py:'Dàtóng'}
+        ], answer:1, vocab:['v_jianyi'] },
       { hz:'老师为什么建议去西安？', py:'Lǎoshī wèishénme jiànyì qù Xī\'ān?',
         options:[
           {hz:'车比较多，更方便', py:'chē bǐjiào duō, gèng fāngbiàn'},
-          {hz:'风景更美', py:'fēngjǐng gèng měi'},
-          {hz:'因为便宜', py:'yīnwèi piányi'}
+          {hz:'因为便宜', py:'yīnwèi piányi'},
+          {hz:'风景更美', py:'fēngjǐng gèng měi'}
         ], answer:0, vocab:['v_fangbian'] },
     ]
   },
@@ -835,10 +835,10 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'他比我___忙。 (Chọn từ có thể dùng cùng với 比)', py:'',
         options:[
-          {hz:'更', py:'gèng'},
+          {hz:'非常', py:'fēicháng'},
           {hz:'很', py:'hěn'},
-          {hz:'非常', py:'fēicháng'}
-        ], answer:0, vocab:['v_bi'] },
+          {hz:'更', py:'gèng'}
+        ], answer:2, vocab:['v_bi'] },
     ]
   },
   {
@@ -847,8 +847,8 @@ const QUESTION_GROUPS = [
       { hz:'他比我大得多。 câu này diễn tả mức độ khác biệt như thế nào?', py:'',
         options:[
           {hz:'khác biệt rất lớn', py:''},
-          {hz:'khác biệt rất nhỏ', py:''},
-          {hz:'bằng tuổi nhau', py:''}
+          {hz:'bằng tuổi nhau', py:''},
+          {hz:'khác biệt rất nhỏ', py:''}
         ], answer:0, vocab:['v_bi'] },
     ]
   },
@@ -857,10 +857,10 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'他没有我大。 câu này nghĩa là gì?', py:'',
         options:[
+          {hz:'他跟我一样大', py:'tā gēn wǒ yíyàng dà'},
           {hz:'他比我小', py:'tā bǐ wǒ xiǎo'},
-          {hz:'他比我大', py:'tā bǐ wǒ dà'},
-          {hz:'他跟我一样大', py:'tā gēn wǒ yíyàng dà'}
-        ], answer:0, vocab:[] },
+          {hz:'他比我大', py:'tā bǐ wǒ dà'}
+        ], answer:1, vocab:[] },
     ]
   },
 ];
@@ -908,12 +908,12 @@ let wordTapAnswerG3;
 const MULTI_G3 = {
   hz:'Câu nào dùng ĐÚNG cấu trúc 跟……一样? (có thể chọn nhiều đáp án)',
   options:[
+    {hz:'他的鞋跟我的鞋没有一样大。', py:'Tā de xié gēn wǒ de xié méiyǒu yíyàng dà.'},
     {hz:'他跟我一样高。', py:'Tā gēn wǒ yíyàng gāo.'},
     {hz:'他一样跟我高。', py:'Tā yíyàng gēn wǒ gāo.'},
-    {hz:'他的鞋跟我的鞋不一样大。', py:'Tā de xié gēn wǒ de xié bù yíyàng dà.'},
-    {hz:'他的鞋跟我的鞋没有一样大。', py:'Tā de xié gēn wǒ de xié méiyǒu yíyàng dà.'}
+    {hz:'他的鞋跟我的鞋不一样大。', py:'Tā de xié gēn wǒ de xié bù yíyàng dà.'}
   ],
-  correctIndices:[0,2],
+  correctIndices:[1,3],
   vocab:['v_yiyang']
 };
 let multiStateG3 = new Set();

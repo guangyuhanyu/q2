@@ -464,9 +464,9 @@
               踢足球，可是我不太会游泳，我是一个
               <select class="blank-select" data-blank="b2">
                 <option value="" selected>－选－</option>
-                <option value="0">旱鸭子 (hànyāzi)</option>
-                <option value="1">球星 (qiúxīng)</option>
-                <option value="2">运动员 (yùndòngyuán)</option>
+                <option value="0">运动员 (yùndòngyuán)</option>
+                <option value="1">旱鸭子 (hànyāzi)</option>
+                <option value="2">球星 (qiúxīng)</option>
               </select>
               。
             </div>
@@ -478,9 +478,9 @@
               我女朋友游泳游得很棒，我很
               <select class="blank-select" data-blank="b3">
                 <option value="" selected>－选－</option>
-                <option value="0">羡慕 (xiànmù)</option>
-                <option value="1">估计 (gūjì)</option>
-                <option value="2">一定 (yídìng)</option>
+                <option value="0">估计 (gūjì)</option>
+                <option value="1">一定 (yídìng)</option>
+                <option value="2">羡慕 (xiànmù)</option>
               </select>
               她。
             </div>
@@ -506,8 +506,8 @@
               明天要考试了，我今天晚上
               <select class="blank-select" data-blank="b5">
                 <option value="" selected>－选－</option>
-                <option value="0">得 (děi)</option>
-                <option value="1">会 (huì)</option>
+                <option value="0">会 (huì)</option>
+                <option value="1">得 (děi)</option>
                 <option value="2">爱 (ài)</option>
               </select>
               在家看书，不能去看比赛了。
@@ -520,9 +520,9 @@
               昨天的比赛巴西队
               <select class="blank-select" data-blank="b6">
                 <option value="" selected>－选－</option>
-                <option value="0">输 (shū)</option>
+                <option value="0">踢 (tī)</option>
                 <option value="1">赢 (yíng)</option>
-                <option value="2">踢 (tī)</option>
+                <option value="2">输 (shū)</option>
               </select>
               了，罗纳尔多的球迷都很难过。
             </div>
@@ -705,11 +705,11 @@ const VOCAB = {
 /* ===================== DỮ LIỆU CÁC BLANK TRONG ĐOẠN VĂN 1.1 ===================== */
 const BLANKS = [
   { id:'b1', answer:0, vocab:['v_ai'] },
-  { id:'b2', answer:0, vocab:['v_hanyazi'] },
-  { id:'b3', answer:0, vocab:['v_xianmu'] },
+  { id:'b2', answer:1, vocab:['v_hanyazi'] },
+  { id:'b3', answer:2, vocab:['v_xianmu'] },
   { id:'b4', answer:0, vocab:['v_guji'] },
-  { id:'b5', answer:0, vocab:['v_dei'] },
-  { id:'b6', answer:0, vocab:['v_shu'] },
+  { id:'b5', answer:1, vocab:['v_dei'] },
+  { id:'b6', answer:2, vocab:['v_shu'] },
 ];
 
 /* ===================== CÁC NHÓM CÂU HỎI (MCQ) ===================== */
@@ -725,15 +725,15 @@ const QUESTION_GROUPS = [
         ], answer:0, vocab:['v_hanyazi'] },
       { hz:'我为什么很羡慕女朋友？', py:'Wǒ wèishénme hěn xiànmù nǚpéngyou?',
         options:[
-          {hz:'因为她游泳游得很棒', py:'yīnwèi tā yóuyǒng yóu de hěn bàng'},
           {hz:'因为她会做菜', py:'yīnwèi tā huì zuò cài'},
-          {hz:'因为她会打字', py:'yīnwèi tā huì dǎzì'}
-        ], answer:0, vocab:['v_xianmu','v_youyong'] },
+          {hz:'因为她会打字', py:'yīnwèi tā huì dǎzì'},
+          {hz:'因为她游泳游得很棒', py:'yīnwèi tā yóuyǒng yóu de hěn bàng'}
+        ], answer:2, vocab:['v_xianmu','v_youyong'] },
       { hz:'昨天的比赛结果怎么样？', py:'Zuótiān de bǐsài jiéguǒ zěnmeyàng?',
         options:[
           {hz:'巴西队输了', py:'Bāxī duì shū le'},
-          {hz:'巴西队赢了', py:'Bāxī duì yíng le'},
-          {hz:'比赛还没开始', py:'bǐsài hái méi kāishǐ'}
+          {hz:'比赛还没开始', py:'bǐsài hái méi kāishǐ'},
+          {hz:'巴西队赢了', py:'Bāxī duì yíng le'}
         ], answer:0, vocab:['v_shu','v_bisai'] },
     ]
   },
@@ -742,10 +742,10 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'西蒙病了，今天不能来上课，我___告诉老师一下儿。', py:'',
         options:[
-          {hz:'得', py:'děi'},
           {hz:'会', py:'huì'},
-          {hz:'能', py:'néng'}
-        ], answer:0, vocab:['v_dei'] },
+          {hz:'能', py:'néng'},
+          {hz:'得', py:'děi'}
+        ], answer:2, vocab:['v_dei'] },
     ]
   },
   {
@@ -753,10 +753,10 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'你游泳游得怎么样？ Chọn câu trả lời đúng cấu trúc:', py:'',
         options:[
-          {hz:'我游得不错。', py:'Wǒ yóu de búcuò.'},
           {hz:'我得游泳。', py:'Wǒ děi yóuyǒng.'},
+          {hz:'我游得不错。', py:'Wǒ yóu de búcuò.'},
           {hz:'我会游得不错。', py:'Wǒ huì yóu de búcuò.'}
-        ], answer:0, vocab:['v_de'] },
+        ], answer:1, vocab:['v_de'] },
     ]
   },
 ];

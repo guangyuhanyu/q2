@@ -519,9 +519,9 @@
               田中问英男能不能把自行车借给他用，英男说没问题，给了他
               <select class="blank-select" data-blank="b1">
                 <option value="" selected>－选－</option>
-                <option value="0">钥匙 (yàoshi)</option>
-                <option value="1">车棚 (chēpéng)</option>
-                <option value="2">表 (biǎo)</option>
+                <option value="0">表 (biǎo)</option>
+                <option value="1">钥匙 (yàoshi)</option>
+                <option value="2">车棚 (chēpéng)</option>
               </select>
               。
             </div>
@@ -547,9 +547,9 @@
               田中骑车出去后一直没回来，英男有点儿
               <select class="blank-select" data-blank="b3">
                 <option value="" selected>－选－</option>
-                <option value="0">着急 (zháojí)</option>
+                <option value="0">放心 (fàngxīn)</option>
                 <option value="1">高兴 (gāoxìng)</option>
-                <option value="2">放心 (fàngxīn)</option>
+                <option value="2">着急 (zháojí)</option>
               </select>
               了。
             </div>
@@ -561,8 +561,8 @@
               后来田中把自行车
               <select class="blank-select" data-blank="b4">
                 <option value="" selected>－选－</option>
-                <option value="0">还 (huán)</option>
-                <option value="1">交 (jiāo)</option>
+                <option value="0">交 (jiāo)</option>
+                <option value="1">还 (huán)</option>
                 <option value="2">送 (sòng)</option>
               </select>
               给了英男，还谢谢他。
@@ -576,15 +576,15 @@
               <select class="blank-select" data-blank="b5">
                 <option value="" selected>－选－</option>
                 <option value="0">水平 (shuǐpíng)</option>
-                <option value="1">成绩 (chéngjì)</option>
-                <option value="2">能力 (nénglì)</option>
+                <option value="1">能力 (nénglì)</option>
+                <option value="2">成绩 (chéngjì)</option>
               </select>
               很高，他常常帮同学把中文
               <select class="blank-select" data-blank="b6">
                 <option value="" selected>－选－</option>
-                <option value="0">翻译 (fānyì)</option>
-                <option value="1">当 (dàng)</option>
-                <option value="2">写 (xiě)</option>
+                <option value="0">当 (dàng)</option>
+                <option value="1">写 (xiě)</option>
+                <option value="2">翻译 (fānyì)</option>
               </select>
               成法语。
             </div>
@@ -762,12 +762,12 @@ const VOCAB = {
 
 /* ===================== DỮ LIỆU CÁC BLANK TRONG ĐOẠN VĂN 1.1 ===================== */
 const BLANKS = [
-  { id:'b1', answer:0, vocab:['v_yaoshi'] },
+  { id:'b1', answer:1, vocab:['v_yaoshi'] },
   { id:'b2', answer:0, vocab:['v_chepeng'] },
-  { id:'b3', answer:0, vocab:['v_zhaoji'] },
-  { id:'b4', answer:0, vocab:['v_huan'] },
+  { id:'b3', answer:2, vocab:['v_zhaoji'] },
+  { id:'b4', answer:1, vocab:['v_huan'] },
   { id:'b5', answer:0, vocab:['v_shuiping'] },
-  { id:'b6', answer:0, vocab:['v_fanyi'] },
+  { id:'b6', answer:2, vocab:['v_fanyi'] },
 ];
 
 /* ===================== CÁC NHÓM CÂU HỎI MCQ (chuẩn) ===================== */
@@ -777,22 +777,22 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'田中问英男借什么？', py:'Tiánzhōng wèn Yīngnán jiè shénme?',
         options:[
-          {hz:'自行车', py:'zìxíngchē'},
           {hz:'钱', py:'qián'},
-          {hz:'词典', py:'cídiǎn'}
-        ], answer:0, vocab:[] },
+          {hz:'词典', py:'cídiǎn'},
+          {hz:'自行车', py:'zìxíngchē'}
+        ], answer:2, vocab:[] },
       { hz:'英男为什么着急？', py:'Yīngnán wèishénme zháojí?',
         options:[
-          {hz:'因为田中骑车出去一直没回来', py:'yīnwèi Tiánzhōng qíchē chūqù yìzhí méi huílai'},
           {hz:'因为要考试', py:'yīnwèi yào kǎoshì'},
+          {hz:'因为田中骑车出去一直没回来', py:'yīnwèi Tiánzhōng qíchē chūqù yìzhí méi huílai'},
           {hz:'因为堵车', py:'yīnwèi dǔchē'}
-        ], answer:0, vocab:['v_zhaoji'] },
+        ], answer:1, vocab:['v_zhaoji'] },
       { hz:'后来田中做了什么？', py:'Hòulái Tiánzhōng zuòle shénme?',
         options:[
-          {hz:'把自行车还给英男', py:'bǎ zìxíngchē huán gěi Yīngnán'},
           {hz:'把自行车卖了', py:'bǎ zìxíngchē mài le'},
-          {hz:'把自行车弄坏了', py:'bǎ zìxíngchē nòng huài le'}
-        ], answer:0, vocab:['v_huan'] },
+          {hz:'把自行车弄坏了', py:'bǎ zìxíngchē nòng huài le'},
+          {hz:'把自行车还给英男', py:'bǎ zìxíngchē huán gěi Yīngnán'}
+        ], answer:2, vocab:['v_huan'] },
     ]
   },
 ];

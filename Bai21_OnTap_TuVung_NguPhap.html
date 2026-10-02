@@ -498,9 +498,9 @@
               西蒙去过越南，那次他
               <select class="blank-select" data-blank="b1">
                 <option value="" selected>－选－</option>
-                <option value="0">真 (zhēn)</option>
-                <option value="1">自己 (zìjǐ)</option>
-                <option value="2">差不多 (chàbuduō)</option>
+                <option value="0">自己 (zìjǐ)</option>
+                <option value="1">差不多 (chàbuduō)</option>
+                <option value="2">真 (zhēn)</option>
               </select>
               喜欢上了这个国家。
             </div>
@@ -512,16 +512,16 @@
               河内的
               <select class="blank-select" data-blank="b2">
                 <option value="" selected>－选－</option>
-                <option value="0">风味 (fēngwèi)</option>
-                <option value="1">自己 (zìjǐ)</option>
-                <option value="2">有名 (yǒumíng)</option>
+                <option value="0">有名 (yǒumíng)</option>
+                <option value="1">风味 (fēngwèi)</option>
+                <option value="2">自己 (zìjǐ)</option>
               </select>
               小吃他
               <select class="blank-select" data-blank="b3">
                 <option value="" selected>－选－</option>
-                <option value="0">差不多 (chàbuduō)</option>
+                <option value="0">真 (zhēn)</option>
                 <option value="1">从来 (cónglái)</option>
-                <option value="2">真 (zhēn)</option>
+                <option value="2">差不多 (chàbuduō)</option>
               </select>
               都吃过了。
             </div>
@@ -534,8 +534,8 @@
               <select class="blank-select" data-blank="b4">
                 <option value="" selected>－选－</option>
                 <option value="0">次 (cì)</option>
-                <option value="1">遍 (biàn)</option>
-                <option value="2">下儿 (xiàr)</option>
+                <option value="1">下儿 (xiàr)</option>
+                <option value="2">遍 (biàn)</option>
               </select>
               。
             </div>
@@ -546,9 +546,9 @@
             <div class="passage-hanzi">
               <select class="blank-select" data-blank="b5">
                 <option value="" selected>－选－</option>
-                <option value="0">除了 (chúle)</option>
+                <option value="0">从来 (cónglái)</option>
                 <option value="1">差不多 (chàbuduō)</option>
-                <option value="2">从来 (cónglái)</option>
+                <option value="2">除了 (chúle)</option>
               </select>
               河内的美食以外，他还听说胡志明市的小吃也很有名。
             </div>
@@ -560,8 +560,8 @@
               他们约好在一家
               <select class="blank-select" data-blank="b6">
                 <option value="" selected>－选－</option>
-                <option value="0">有名 (yǒumíng)</option>
-                <option value="1">简单 (jiǎndān)</option>
+                <option value="0">简单 (jiǎndān)</option>
+                <option value="1">有名 (yǒumíng)</option>
                 <option value="2">风味 (fēngwèi)</option>
               </select>
               的咖啡馆见面。
@@ -789,12 +789,12 @@ const VOCAB = {
 
 /* ===================== DỮ LIỆU CÁC BLANK TRONG ĐOẠN VĂN 1.1 ===================== */
 const BLANKS = [
-  { id:'b1', answer:0, vocab:['v_zhen'] },
-  { id:'b2', answer:0, vocab:['v_fengwei'] },
-  { id:'b3', answer:0, vocab:['v_chabuduo'] },
+  { id:'b1', answer:2, vocab:['v_zhen'] },
+  { id:'b2', answer:1, vocab:['v_fengwei'] },
+  { id:'b3', answer:2, vocab:['v_chabuduo'] },
   { id:'b4', answer:0, vocab:['v_ci'] },
-  { id:'b5', answer:0, vocab:['v_chuleyiwai'] },
-  { id:'b6', answer:0, vocab:['v_youming'] },
+  { id:'b5', answer:2, vocab:['v_chuleyiwai'] },
+  { id:'b6', answer:1, vocab:['v_youming'] },
 ];
 
 /* ===================== CÁC NHÓM CÂU HỎI MCQ (chuẩn, dùng chung renderQuestions) ===================== */
@@ -805,20 +805,20 @@ const QUESTION_GROUPS = [
       { hz:'西蒙第一次去越南是什么时候？', py:'Xīméng dì-yī cì qù Yuènán shì shénme shíhou?',
         options:[
           {hz:'两年前', py:'liǎng nián qián'},
-          {hz:'去年', py:'qùnián'},
-          {hz:'上个月', py:'shàng ge yuè'}
+          {hz:'上个月', py:'shàng ge yuè'},
+          {hz:'去年', py:'qùnián'}
         ], answer:0, vocab:[] },
       { hz:'西蒙对河内的小吃感觉怎么样？', py:'Xīméng duì Hénèi de xiǎochī gǎnjué zěnmeyàng?',
         options:[
-          {hz:'差不多都吃过了，很喜欢', py:'chàbuduō dōu chīguo le, hěn xǐhuan'},
           {hz:'一次也没吃过', py:'yí cì yě méi chīguo'},
+          {hz:'差不多都吃过了，很喜欢', py:'chàbuduō dōu chīguo le, hěn xǐhuan'},
           {hz:'觉得不好吃', py:'juéde bù hǎochī'}
-        ], answer:0, vocab:['v_chabuduo','v_xiaochi'] },
+        ], answer:1, vocab:['v_chabuduo','v_xiaochi'] },
       { hz:'这次西蒙打算怎么去胡志明市旅行？', py:'Zhè cì Xīméng dǎsuàn zěnme qù Húzhìmíng Shì lǚxíng?',
         options:[
           {hz:'自己一个人去', py:'zìjǐ yí ge rén qù'},
-          {hz:'跟很多朋友一起去', py:'gēn hěnduō péngyou yìqǐ qù'},
-          {hz:'跟家人一起去', py:'gēn jiārén yìqǐ qù'}
+          {hz:'跟家人一起去', py:'gēn jiārén yìqǐ qù'},
+          {hz:'跟很多朋友一起去', py:'gēn hěnduō péngyou yìqǐ qù'}
         ], answer:0, vocab:['v_ziji'] },
     ]
   },
@@ -837,10 +837,10 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'A: 你去过上海吗？ B: 去过。 A: 你是去旅行的吗？ B: ___', py:'',
         options:[
-          {hz:'不是，我是去出差的。', py:'Bú shì, wǒ shì qù chūchāi de.'},
           {hz:'是，我是去旅行的。', py:'Shì, wǒ shì qù lǚxíng de.'},
+          {hz:'不是，我是去出差的。', py:'Bú shì, wǒ shì qù chūchāi de.'},
           {hz:'我没去过上海。', py:'Wǒ méi qùguo Shànghǎi.'}
-        ], answer:0, vocab:[] },
+        ], answer:1, vocab:[] },
     ]
   },
   {
@@ -859,8 +859,8 @@ const QUESTION_GROUPS = [
       { hz:'除了西蒙以外，我们___不会说法语。 (Chọn từ đúng)', py:'',
         options:[
           {hz:'都', py:'dōu'},
-          {hz:'还', py:'hái'},
-          {hz:'也', py:'yě'}
+          {hz:'也', py:'yě'},
+          {hz:'还', py:'hái'}
         ], answer:0, vocab:['v_chuleyiwai'] },
     ]
   },
@@ -870,10 +870,10 @@ const QUESTION_GROUPS = [
 const MULTI_G1 = {
   hz:'Câu nào dùng ĐÚNG trợ từ 过? (có thể chọn nhiều đáp án)',
   options:[
-    {hz:'我去过香山。', py:'Wǒ qùguo Xiāng Shān.'},
     {hz:'我没有去过香山。', py:'Wǒ méiyǒu qùguo Xiāng Shān.'},
+    {hz:'你去过香山没有？', py:'Nǐ qùguo Xiāng Shān méiyǒu?'},
     {hz:'我不去过香山。', py:'Wǒ bú qùguo Xiāng Shān.'},
-    {hz:'你去过香山没有？', py:'Nǐ qùguo Xiāng Shān méiyǒu?'}
+    {hz:'我去过香山。', py:'Wǒ qùguo Xiāng Shān.'}
   ],
   correctIndices:[0,1,3],
   vocab:['v_guo']
@@ -884,12 +884,12 @@ let multiStateG1 = new Set();
 const MULTI_G3 = {
   hz:'Câu nào dùng ĐÚNG bổ ngữ động lượng? (có thể chọn nhiều đáp án)',
   options:[
+    {hz:'今天我三次找了你。', py:'Jīntiān wǒ sān cì zhǎole nǐ.'},
     {hz:'我去过三次香山。', py:'Wǒ qùguo sān cì Xiāng Shān.'},
     {hz:'我去过香山三次。', py:'Wǒ qùguo Xiāng Shān sān cì.'},
-    {hz:'今天我找了你三次。', py:'Jīntiān wǒ zhǎole nǐ sān cì.'},
-    {hz:'今天我三次找了你。', py:'Jīntiān wǒ sān cì zhǎole nǐ.'}
+    {hz:'今天我找了你三次。', py:'Jīntiān wǒ zhǎole nǐ sān cì.'}
   ],
-  correctIndices:[0,2],
+  correctIndices:[1,3],
   vocab:['v_ci']
 };
 let multiStateG3 = new Set();

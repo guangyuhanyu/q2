@@ -458,16 +458,16 @@
               秋天
               <select class="blank-select" data-blank="b1">
                 <option value="" selected>－选－</option>
-                <option value="0">了 (le)</option>
-                <option value="1">呢 (ne)</option>
-                <option value="2">吗 (ma)</option>
+                <option value="0">吗 (ma)</option>
+                <option value="1">了 (le)</option>
+                <option value="2">呢 (ne)</option>
               </select>
               ，天气
               <select class="blank-select" data-blank="b2">
                 <option value="" selected>－选－</option>
-                <option value="0">凉 (liáng)</option>
-                <option value="1">热 (rè)</option>
-                <option value="2">暖和 (nuǎnhuo)</option>
+                <option value="0">热 (rè)</option>
+                <option value="1">暖和 (nuǎnhuo)</option>
+                <option value="2">凉 (liáng)</option>
               </select>
               了，山上的树叶都变红了。
             </div>
@@ -479,8 +479,8 @@
               导游说现在去香山看红叶的时间很
               <select class="blank-select" data-blank="b3">
                 <option value="" selected>－选－</option>
-                <option value="0">巧 (qiǎo)</option>
-                <option value="1">远 (yuǎn)</option>
+                <option value="0">远 (yuǎn)</option>
+                <option value="1">巧 (qiǎo)</option>
                 <option value="2">贵 (guì)</option>
               </select>
               。
@@ -500,9 +500,9 @@
               ，看上去
               <select class="blank-select" data-blank="b5">
                 <option value="" selected>－选－</option>
-                <option value="0">更 (gèng)</option>
-                <option value="1">最 (zuì)</option>
-                <option value="2">太 (tài)</option>
+                <option value="0">最 (zuì)</option>
+                <option value="1">太 (tài)</option>
+                <option value="2">更 (gèng)</option>
               </select>
               瘦了一点儿。
             </div>
@@ -514,9 +514,9 @@
               我们打算
               <select class="blank-select" data-blank="b6">
                 <option value="" selected>－选－</option>
-                <option value="0">回 (huí)</option>
-                <option value="1">去 (qù)</option>
-                <option value="2">到 (dào)</option>
+                <option value="0">到 (dào)</option>
+                <option value="1">回 (huí)</option>
+                <option value="2">去 (qù)</option>
               </select>
               国以后再去看亲戚。
             </div>
@@ -732,12 +732,12 @@ const VOCAB = {
 
 /* ===================== DỮ LIỆU CÁC BLANK TRONG ĐOẠN VĂN 1.1 ===================== */
 const BLANKS = [
-  { id:'b1', answer:0, vocab:['v_qiutian'] },
-  { id:'b2', answer:0, vocab:['v_tianqi'] },
-  { id:'b3', answer:0, vocab:['v_qiao'] },
+  { id:'b1', answer:1, vocab:['v_qiutian'] },
+  { id:'b2', answer:2, vocab:['v_tianqi'] },
+  { id:'b3', answer:1, vocab:['v_qiao'] },
   { id:'b4', answer:0, vocab:['v_shuilanjiao'] },
-  { id:'b5', answer:0, vocab:['v_geng'] },
-  { id:'b6', answer:0, vocab:['v_hui','v_qinqi'] },
+  { id:'b5', answer:2, vocab:['v_geng'] },
+  { id:'b6', answer:1, vocab:['v_hui','v_qinqi'] },
 ];
 
 /* ===================== CÁC NHÓM CÂU HỎI (MCQ) ===================== */
@@ -747,10 +747,10 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'现在是什么季节？', py:'Xiànzài shì shénme jìjié?',
         options:[
-          {hz:'秋天', py:'qiūtiān'},
           {hz:'冬天', py:'dōngtiān'},
+          {hz:'秋天', py:'qiūtiān'},
           {hz:'夏天', py:'xiàtiān'}
-        ], answer:0, vocab:['v_qiutian'] },
+        ], answer:1, vocab:['v_qiutian'] },
       { hz:'我们打算去哪儿看红叶？', py:'Wǒmen dǎsuàn qù nǎr kàn hóngyè?',
         options:[
           {hz:'香山', py:'Xiāng Shān'},
@@ -759,10 +759,10 @@ const QUESTION_GROUPS = [
         ], answer:0, vocab:['v_hongye','v_daoyou'] },
       { hz:'最近我看上去怎么样？', py:'Zuìjìn wǒ kàn shàngqu zěnmeyàng?',
         options:[
-          {hz:'瘦了一点儿', py:'shòule yìdiǎnr'},
+          {hz:'更饱了', py:'gèng bǎo le'},
           {hz:'胖了一点儿', py:'pàngle yìdiǎnr'},
-          {hz:'更饱了', py:'gèng bǎo le'}
-        ], answer:0, vocab:['v_shou','v_kanshangqu'] },
+          {hz:'瘦了一点儿', py:'shòule yìdiǎnr'}
+        ], answer:2, vocab:['v_shou','v_kanshangqu'] },
     ]
   },
   {
@@ -781,10 +781,10 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'A: 今天下午你可以陪我去逛商店吗？ B: 今天下午我有事，___。', py:'',
         options:[
+          {hz:'没有陪你去。', py:'Méiyǒu péi nǐ qù.'},
           {hz:'不能陪你去。', py:'Bù néng péi nǐ qù.'},
-          {hz:'不可以陪你去。', py:'Bù kěyǐ péi nǐ qù.'},
-          {hz:'没有陪你去。', py:'Méiyǒu péi nǐ qù.'}
-        ], answer:0, vocab:[] },
+          {hz:'不可以陪你去。', py:'Bù kěyǐ péi nǐ qù.'}
+        ], answer:1, vocab:[] },
     ]
   },
 ];
@@ -807,10 +807,10 @@ let orderStateG1 = [];
 const TRUEFALSE_G1 = {
   hz:'Nhận định sau ĐÚNG hay SAI: "Trợ từ ngữ khí 了 luôn phải đứng ngay sau động từ, giống như trợ từ động thái 了 (Bài 17)."',
   options:[
-    {hz:'对', py:'duì (Đúng)'},
-    {hz:'错', py:'cuò (Sai)'}
+    {hz:'错', py:'cuò (Sai)'},
+    {hz:'对', py:'duì (Đúng)'}
   ],
-  answer:1,
+  answer:0,
   vocab:[]
 };
 

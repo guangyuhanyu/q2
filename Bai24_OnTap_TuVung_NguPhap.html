@@ -499,8 +499,8 @@
               <select class="blank-select" data-blank="b1">
                 <option value="" selected>－选－</option>
                 <option value="0">出 (chū)</option>
-                <option value="1">上 (shàng)</option>
-                <option value="2">下 (xià)</option>
+                <option value="1">下 (xià)</option>
+                <option value="2">上 (shàng)</option>
               </select>
               去了，可能一会儿就回来。
             </div>
@@ -512,9 +512,9 @@
               直美说："你正在学习吧？不
               <select class="blank-select" data-blank="b2">
                 <option value="" selected>－选－</option>
-                <option value="0">妨碍 (fáng'ài)</option>
+                <option value="0">帮 (bāng)</option>
                 <option value="1">打扰 (dǎrǎo)</option>
-                <option value="2">帮 (bāng)</option>
+                <option value="2">妨碍 (fáng'ài)</option>
               </select>
               你吗？"
             </div>
@@ -527,8 +527,8 @@
               <select class="blank-select" data-blank="b3">
                 <option value="" selected>－选－</option>
                 <option value="0">屋 (wū)</option>
-                <option value="1">门 (mén)</option>
-                <option value="2">家 (jiā)</option>
+                <option value="1">家 (jiā)</option>
+                <option value="2">门 (mén)</option>
               </select>
               来吧。"
             </div>
@@ -540,9 +540,9 @@
               小叶说："那
               <select class="blank-select" data-blank="b4">
                 <option value="" selected>－选－</option>
-                <option value="0">打扰 (dǎrǎo)</option>
+                <option value="0">帮 (bāng)</option>
                 <option value="1">妨碍 (fáng'ài)</option>
-                <option value="2">帮 (bāng)</option>
+                <option value="2">打扰 (dǎrǎo)</option>
               </select>
               你了。"
             </div>
@@ -554,9 +554,9 @@
               莉莉回来后说："真
               <select class="blank-select" data-blank="b5">
                 <option value="" selected>－选－</option>
-                <option value="0">抱歉 (bàoqiàn)</option>
-                <option value="1">不好意思 (bù hǎoyìsi)</option>
-                <option value="2">生气 (shēngqì)</option>
+                <option value="0">生气 (shēngqì)</option>
+                <option value="1">抱歉 (bàoqiàn)</option>
+                <option value="2">不好意思 (bù hǎoyìsi)</option>
               </select>
               ，让你久等了。"
             </div>
@@ -778,10 +778,10 @@ const VOCAB = {
 /* ===================== DỮ LIỆU CÁC BLANK TRONG ĐOẠN VĂN 1.1 ===================== */
 const BLANKS = [
   { id:'b1', answer:0, vocab:['v_chu'] },
-  { id:'b2', answer:0, vocab:['v_fangai'] },
+  { id:'b2', answer:2, vocab:['v_fangai'] },
   { id:'b3', answer:0, vocab:['v_wu'] },
-  { id:'b4', answer:0, vocab:['v_darao'] },
-  { id:'b5', answer:0, vocab:['v_baoqian'] },
+  { id:'b4', answer:2, vocab:['v_darao'] },
+  { id:'b5', answer:1, vocab:['v_baoqian'] },
   { id:'b6', answer:0, vocab:['v_bang'] },
 ];
 
@@ -792,22 +792,22 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'莉莉去哪儿了？', py:'Lìlì qù nǎr le?',
         options:[
-          {hz:'出去了', py:'chūqu le'},
           {hz:'在屋里', py:'zài wū lǐ'},
-          {hz:'去上课了', py:'qù shàngkè le'}
-        ], answer:0, vocab:['v_chu'] },
+          {hz:'去上课了', py:'qù shàngkè le'},
+          {hz:'出去了', py:'chūqu le'}
+        ], answer:2, vocab:['v_chu'] },
       { hz:'直美为什么说"不妨碍你吗"？', py:'Zhíměi wèishénme shuō "bù fáng\'ài nǐ ma"?',
         options:[
+          {hz:'因为小叶要走了', py:'yīnwèi Xiǎoyè yào zǒu le'},
           {hz:'因为小叶正在学习', py:'yīnwèi Xiǎoyè zhèngzài xuéxí'},
-          {hz:'因为小叶生气了', py:'yīnwèi Xiǎoyè shēngqì le'},
-          {hz:'因为小叶要走了', py:'yīnwèi Xiǎoyè yào zǒu le'}
-        ], answer:0, vocab:['v_fangai'] },
+          {hz:'因为小叶生气了', py:'yīnwèi Xiǎoyè shēngqì le'}
+        ], answer:1, vocab:['v_fangai'] },
       { hz:'小叶为什么说"不好意思"？', py:'Xiǎoyè wèishénme shuō "bù hǎoyìsi"?',
         options:[
-          {hz:'因为麻烦莉莉帮忙买书送来', py:'yīnwèi máfan Lìlì bāngmáng mǎi shū sònglai'},
+          {hz:'因为忘记了作业', py:'yīnwèi wàngjìle zuòyè'},
           {hz:'因为迟到了', py:'yīnwèi chídào le'},
-          {hz:'因为忘记了作业', py:'yīnwèi wàngjìle zuòyè'}
-        ], answer:0, vocab:['v_buhaoyisi','v_bangmang'] },
+          {hz:'因为麻烦莉莉帮忙买书送来', py:'yīnwèi máfan Lìlì bāngmáng mǎi shū sònglai'}
+        ], answer:2, vocab:['v_buhaoyisi','v_bangmang'] },
     ]
   },
   {
@@ -815,10 +815,10 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'莉莉出去了，可能一会儿就___。 (người nói đang ở trong ký túc xá, chọn từ đúng)', py:'',
         options:[
-          {hz:'回来', py:'huílai'},
           {hz:'回去', py:'huíqu'},
+          {hz:'回来', py:'huílai'},
           {hz:'回', py:'huí'}
-        ], answer:0, vocab:[] },
+        ], answer:1, vocab:[] },
     ]
   },
 ];
@@ -853,12 +853,12 @@ let matchStateG2 = {};
 const MULTI_G2 = {
   hz:'Câu nào là câu kiêm ngữ ĐÚNG? (có thể chọn nhiều đáp án)',
   options:[
-    {hz:'我请你吃韩国菜。', py:'Wǒ qǐng nǐ chī Hánguó cài.'},
+    {hz:'老师让预习我们生词。', py:'Lǎoshī ràng yùxí wǒmen shēngcí.'},
     {hz:'我请你了韩国菜。', py:'Wǒ qǐng nǐ le Hánguó cài.'},
-    {hz:'老师让我们预习生词。', py:'Lǎoshī ràng wǒmen yùxí shēngcí.'},
-    {hz:'老师让预习我们生词。', py:'Lǎoshī ràng yùxí wǒmen shēngcí.'}
+    {hz:'我请你吃韩国菜。', py:'Wǒ qǐng nǐ chī Hánguó cài.'},
+    {hz:'老师让我们预习生词。', py:'Lǎoshī ràng wǒmen yùxí shēngcí.'}
   ],
-  correctIndices:[0,2],
+  correctIndices:[2,3],
   vocab:['v_rang']
 };
 let multiStateG2 = new Set();

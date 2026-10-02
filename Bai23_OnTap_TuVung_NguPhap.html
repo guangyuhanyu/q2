@@ -499,8 +499,8 @@
               喂，你打
               <select class="blank-select" data-blank="b1">
                 <option value="" selected>－选－</option>
-                <option value="0">错 (cuò)</option>
-                <option value="1">对 (duì)</option>
+                <option value="0">对 (duì)</option>
+                <option value="1">错 (cuò)</option>
                 <option value="2">急 (jí)</option>
               </select>
               了，这里不是图书馆。
@@ -514,8 +514,8 @@
               <select class="blank-select" data-blank="b2">
                 <option value="" selected>－选－</option>
                 <option value="0">清楚 (qīngchu)</option>
-                <option value="1">懂 (dǒng)</option>
-                <option value="2">见 (jiàn)</option>
+                <option value="1">见 (jiàn)</option>
+                <option value="2">懂 (dǒng)</option>
               </select>
               ，请再说一遍。
             </div>
@@ -527,8 +527,8 @@
               小叶不在，你有什么事儿，我可以帮你
               <select class="blank-select" data-blank="b3">
                 <option value="" selected>－选－</option>
-                <option value="0">转告 (zhuǎngào)</option>
-                <option value="1">告诉 (gàosu)</option>
+                <option value="0">告诉 (gàosu)</option>
+                <option value="1">转告 (zhuǎngào)</option>
                 <option value="2">说 (shuō)</option>
               </select>
               。
@@ -542,14 +542,14 @@
               <select class="blank-select" data-blank="b4">
                 <option value="" selected>－选－</option>
                 <option value="0">一直 (yìzhí)</option>
-                <option value="1">马上 (mǎshàng)</option>
-                <option value="2">已经 (yǐjīng)</option>
+                <option value="1">已经 (yǐjīng)</option>
+                <option value="2">马上 (mǎshàng)</option>
               </select>
               忙到十点才能回来，让她别
               <select class="blank-select" data-blank="b5">
                 <option value="" selected>－选－</option>
-                <option value="0">叫 (jiào)</option>
-                <option value="1">等 (děng)</option>
+                <option value="0">等 (děng)</option>
+                <option value="1">叫 (jiào)</option>
                 <option value="2">找 (zhǎo)</option>
               </select>
               我了。
@@ -799,11 +799,11 @@ const VOCAB = {
 
 /* ===================== DỮ LIỆU CÁC BLANK TRONG ĐOẠN VĂN 1.1 ===================== */
 const BLANKS = [
-  { id:'b1', answer:0, vocab:['v_cuo'] },
+  { id:'b1', answer:1, vocab:['v_cuo'] },
   { id:'b2', answer:0, vocab:['v_qingchu'] },
-  { id:'b3', answer:0, vocab:['v_zhuangao'] },
+  { id:'b3', answer:1, vocab:['v_zhuangao'] },
   { id:'b4', answer:0, vocab:['v_yizhi'] },
-  { id:'b5', answer:0, vocab:['v_jiao'] },
+  { id:'b5', answer:1, vocab:['v_jiao'] },
   { id:'b6', answer:0, vocab:['v_qu'] },
 ];
 
@@ -814,22 +814,22 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'这个电话打对了吗？', py:'Zhège diànhuà dǎ duì le ma?',
         options:[
-          {hz:'打错了', py:'dǎ cuò le'},
           {hz:'打对了', py:'dǎ duì le'},
-          {hz:'没人接', py:'méi rén jiē'}
-        ], answer:0, vocab:['v_cuo'] },
+          {hz:'没人接', py:'méi rén jiē'},
+          {hz:'打错了', py:'dǎ cuò le'}
+        ], answer:2, vocab:['v_cuo'] },
       { hz:'小叶不在，说话的人可以帮忙做什么？', py:'Xiǎoyè bú zài, shuōhuà de rén kěyǐ bāngmáng zuò shénme?',
         options:[
+          {hz:'生气', py:'shēngqì'},
           {hz:'转告', py:'zhuǎngào'},
-          {hz:'挂电话', py:'guà diànhuà'},
-          {hz:'生气', py:'shēngqì'}
-        ], answer:0, vocab:['v_zhuangao'] },
+          {hz:'挂电话', py:'guà diànhuà'}
+        ], answer:1, vocab:['v_zhuangao'] },
       { hz:'打电话的人为什么要出门？', py:'Dǎ diànhuà de rén wèishénme yào chūmén?',
         options:[
-          {hz:'去取火车票', py:'qù qǔ huǒchēpiào'},
+          {hz:'去买菜', py:'qù mǎi cài'},
           {hz:'去图书馆', py:'qù túshūguǎn'},
-          {hz:'去买菜', py:'qù mǎi cài'}
-        ], answer:0, vocab:['v_qu','v_piao'] },
+          {hz:'去取火车票', py:'qù qǔ huǒchēpiào'}
+        ], answer:2, vocab:['v_qu','v_piao'] },
     ]
   },
   {
@@ -838,8 +838,8 @@ const QUESTION_GROUPS = [
       { hz:'你要的书我给你___了。 (Chọn cách diễn đạt đúng)', py:'',
         options:[
           {hz:'准备好', py:'zhǔnbèi hǎo'},
-          {hz:'准备', py:'zhǔnbèi'},
-          {hz:'好准备', py:'hǎo zhǔnbèi'}
+          {hz:'好准备', py:'hǎo zhǔnbèi'},
+          {hz:'准备', py:'zhǔnbèi'}
         ], answer:0, vocab:[] },
     ]
   },
@@ -848,10 +848,10 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'他一说完，___。 (Chọn vế câu đúng để hoàn thành)', py:'',
         options:[
-          {hz:'大家就都笑了。', py:'dàjiā jiù dōu xiào le.'},
           {hz:'大家都笑了一下。', py:'dàjiā dōu xiàole yíxià.'},
+          {hz:'大家就都笑了。', py:'dàjiā jiù dōu xiào le.'},
           {hz:'大家笑就了。', py:'dàjiā xiào jiù le.'}
-        ], answer:0, vocab:['v_yijiu'] },
+        ], answer:1, vocab:['v_yijiu'] },
     ]
   },
 ];
@@ -913,12 +913,12 @@ let matchStateG3 = {};
 const MULTI_G4 = {
   hz:'Câu nào dùng ĐÚNG bổ ngữ kết quả 住? (có thể chọn nhiều đáp án)',
   options:[
-    {hz:'你记住他的手机号了吗？', py:'Nǐ jìzhù tā de shǒujīhào le ma?'},
     {hz:'汽车停住了。', py:'Qìchē tíngzhù le.'},
     {hz:'你住记他的手机号了吗？', py:'Nǐ zhù jì tā de shǒujīhào le ma?'},
+    {hz:'你记住他的手机号了吗？', py:'Nǐ jìzhù tā de shǒujīhào le ma?'},
     {hz:'汽车住停了。', py:'Qìchē zhù tíng le.'}
   ],
-  correctIndices:[0,1],
+  correctIndices:[0,2],
   vocab:['v_ji2','v_ting']
 };
 let multiStateG4 = new Set();

@@ -496,9 +496,9 @@
               保罗最近工作很忙，
               <select class="blank-select" data-blank="b1">
                 <option value="" selected>－选－</option>
-                <option value="0">感冒 (gǎnmào)</option>
-                <option value="1">生气 (shēngqì)</option>
-                <option value="2">着急 (zháojí)</option>
+                <option value="0">生气 (shēngqì)</option>
+                <option value="1">着急 (zháojí)</option>
+                <option value="2">感冒 (gǎnmào)</option>
               </select>
               了。
             </div>
@@ -517,9 +517,9 @@
               疼、头疼，还咳嗽，大夫让他量
               <select class="blank-select" data-blank="b3">
                 <option value="" selected>－选－</option>
-                <option value="0">体温 (tǐwēn)</option>
-                <option value="1">血压 (xuèyā)</option>
-                <option value="2">身高 (shēngāo)</option>
+                <option value="0">身高 (shēngāo)</option>
+                <option value="1">体温 (tǐwēn)</option>
+                <option value="2">血压 (xuèyā)</option>
               </select>
               。
             </div>
@@ -532,8 +532,8 @@
               <select class="blank-select" data-blank="b4">
                 <option value="" selected>－选－</option>
                 <option value="0">度 (dù)</option>
-                <option value="1">分 (fēn)</option>
-                <option value="2">点 (diǎn)</option>
+                <option value="1">点 (diǎn)</option>
+                <option value="2">分 (fēn)</option>
               </select>
               五。
             </div>
@@ -545,9 +545,9 @@
               大夫建议他
               <select class="blank-select" data-blank="b5">
                 <option value="" selected>－选－</option>
-                <option value="0">打针 (dǎzhēn)</option>
+                <option value="0">上班 (shàngbān)</option>
                 <option value="1">吃饭 (chīfàn)</option>
-                <option value="2">上班 (shàngbān)</option>
+                <option value="2">打针 (dǎzhēn)</option>
               </select>
               ，还给他开了药。
             </div>
@@ -560,8 +560,8 @@
               <select class="blank-select" data-blank="b6">
                 <option value="" selected>－选－</option>
                 <option value="0">烟 (yān)</option>
-                <option value="1">酒 (jiǔ)</option>
-                <option value="2">糖 (táng)</option>
+                <option value="1">糖 (táng)</option>
+                <option value="2">酒 (jiǔ)</option>
               </select>
               。
             </div>
@@ -719,11 +719,11 @@ const VOCAB = {
 
 /* ===================== DỮ LIỆU CÁC BLANK TRONG ĐOẠN VĂN 1.1 ===================== */
 const BLANKS = [
-  { id:'b1', answer:0, vocab:['v_ganmao'] },
+  { id:'b1', answer:2, vocab:['v_ganmao'] },
   { id:'b2', answer:0, vocab:['v_sangzi'] },
-  { id:'b3', answer:0, vocab:['v_tiwen'] },
+  { id:'b3', answer:1, vocab:['v_tiwen'] },
   { id:'b4', answer:0, vocab:['v_du'] },
-  { id:'b5', answer:0, vocab:['v_dazhen'] },
+  { id:'b5', answer:2, vocab:['v_dazhen'] },
   { id:'b6', answer:0, vocab:['v_yan','v_jie'] },
 ];
 
@@ -740,16 +740,16 @@ const QUESTION_GROUPS = [
         ], answer:0, vocab:['v_ganmao'] },
       { hz:'保罗有什么症状？', py:'Bǎoluó yǒu shénme zhèngzhuàng?',
         options:[
-          {hz:'嗓子疼、头疼、咳嗽', py:'sǎngzi téng, tóuténg, késou'},
           {hz:'只有咳嗽', py:'zhǐ yǒu késou'},
-          {hz:'没有任何症状', py:'méiyǒu rènhé zhèngzhuàng'}
-        ], answer:0, vocab:['v_sangzi','v_touteng','v_kesou'] },
+          {hz:'没有任何症状', py:'méiyǒu rènhé zhèngzhuàng'},
+          {hz:'嗓子疼、头疼、咳嗽', py:'sǎngzi téng, tóuténg, késou'}
+        ], answer:2, vocab:['v_sangzi','v_touteng','v_kesou'] },
       { hz:'大夫劝保罗要注意什么？', py:'Dàifu quàn Bǎoluó yào zhùyì shénme?',
         options:[
+          {hz:'不用管', py:'búyòng guǎn'},
           {hz:'按时休息，戒烟', py:'ànshí xiūxi, jièyān'},
-          {hz:'多吃辣的', py:'duō chī là de'},
-          {hz:'不用管', py:'búyòng guǎn'}
-        ], answer:0, vocab:['v_anshi','v_quan','v_yan'] },
+          {hz:'多吃辣的', py:'duō chī là de'}
+        ], answer:1, vocab:['v_anshi','v_quan','v_yan'] },
     ]
   },
 ];

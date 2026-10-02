@@ -459,8 +459,8 @@
               时间过得真快，西蒙明天就要回国了，我们今天晚上要去
               <select class="blank-select" data-blank="b1">
                 <option value="" selected>－选－</option>
-                <option value="0">送 (sòng)</option>
-                <option value="1">接 (jiē)</option>
+                <option value="0">接 (jiē)</option>
+                <option value="1">送 (sòng)</option>
                 <option value="2">找 (zhǎo)</option>
               </select>
               他。
@@ -473,15 +473,15 @@
               <select class="blank-select" data-blank="b2">
                 <option value="" selected>－选－</option>
                 <option value="0">因为 (yīnwèi)</option>
-                <option value="1">所以 (suǒyǐ)</option>
-                <option value="2">但是 (dànshì)</option>
+                <option value="1">但是 (dànshì)</option>
+                <option value="2">所以 (suǒyǐ)</option>
               </select>
               路上堵车，所以我们开车开了一个小时
               <select class="blank-select" data-blank="b3">
                 <option value="" selected>－选－</option>
-                <option value="0">才 (cái)</option>
-                <option value="1">就 (jiù)</option>
-                <option value="2">都 (dōu)</option>
+                <option value="0">就 (jiù)</option>
+                <option value="1">都 (dōu)</option>
+                <option value="2">才 (cái)</option>
               </select>
               到。
             </div>
@@ -492,16 +492,16 @@
             <div class="passage-hanzi">
               <select class="blank-select" data-blank="b4">
                 <option value="" selected>－选－</option>
-                <option value="0">虽然 (suīrán)</option>
-                <option value="1">因为 (yīnwèi)</option>
+                <option value="0">因为 (yīnwèi)</option>
+                <option value="1">虽然 (suīrán)</option>
                 <option value="2">所以 (suǒyǐ)</option>
               </select>
               西蒙要回国了，但是他说他过得很
               <select class="blank-select" data-blank="b5">
                 <option value="" selected>－选－</option>
-                <option value="0">愉快 (yúkuài)</option>
+                <option value="0">安静 (ānjìng)</option>
                 <option value="1">紧张 (jǐnzhāng)</option>
-                <option value="2">安静 (ānjìng)</option>
+                <option value="2">愉快 (yúkuài)</option>
               </select>
               ，交了很多朋友。
             </div>
@@ -514,8 +514,8 @@
               <select class="blank-select" data-blank="b6">
                 <option value="" selected>－选－</option>
                 <option value="0">准备 (zhǔnbèi)</option>
-                <option value="1">送 (sòng)</option>
-                <option value="2">堵车 (dǔchē)</option>
+                <option value="1">堵车 (dǔchē)</option>
+                <option value="2">送 (sòng)</option>
               </select>
               要收拾行李了，我们得早点儿走。
             </div>
@@ -745,11 +745,11 @@ const VOCAB = {
 
 /* ===================== DỮ LIỆU CÁC BLANK TRONG ĐOẠN VĂN 1.1 ===================== */
 const BLANKS = [
-  { id:'b1', answer:0, vocab:['v_song'] },
+  { id:'b1', answer:1, vocab:['v_song'] },
   { id:'b2', answer:0, vocab:['v_yinwei','v_duche'] },
-  { id:'b3', answer:0, vocab:['v_cai'] },
-  { id:'b4', answer:0, vocab:['v_suiran'] },
-  { id:'b5', answer:0, vocab:['v_yukuai'] },
+  { id:'b3', answer:2, vocab:['v_cai'] },
+  { id:'b4', answer:1, vocab:['v_suiran'] },
+  { id:'b5', answer:2, vocab:['v_yukuai'] },
   { id:'b6', answer:0, vocab:['v_zhunbei'] },
 ];
 
@@ -760,22 +760,22 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'我们今天晚上要做什么？', py:'Wǒmen jīntiān wǎnshang yào zuò shénme?',
         options:[
-          {hz:'去送西蒙', py:'qù sòng Xīméng'},
           {hz:'去看电影', py:'qù kàn diànyǐng'},
-          {hz:'去买东西', py:'qù mǎi dōngxi'}
-        ], answer:0, vocab:['v_song'] },
+          {hz:'去买东西', py:'qù mǎi dōngxi'},
+          {hz:'去送西蒙', py:'qù sòng Xīméng'}
+        ], answer:2, vocab:['v_song'] },
       { hz:'我们为什么开车开了一个小时才到？', py:'Wǒmen wèishénme kāichē kāile yí ge xiǎoshí cái dào?',
         options:[
           {hz:'因为路上堵车', py:'yīnwèi lùshang dǔchē'},
-          {hz:'因为车坏了', py:'yīnwèi chē huài le'},
-          {hz:'因为找不到路', py:'yīnwèi zhǎobudào lù'}
+          {hz:'因为找不到路', py:'yīnwèi zhǎobudào lù'},
+          {hz:'因为车坏了', py:'yīnwèi chē huài le'}
         ], answer:0, vocab:['v_duche','v_cai'] },
       { hz:'西蒙在中国过得怎么样？', py:'Xīméng zài Zhōngguó guò de zěnmeyàng?',
         options:[
+          {hz:'过得不好，想回家', py:'guò de bù hǎo, xiǎng huí jiā'},
           {hz:'过得很愉快，交了很多朋友', py:'guò de hěn yúkuài, jiāole hěnduō péngyou'},
-          {hz:'过得很紧张，不适应', py:'guò de hěn jǐnzhāng, bú shìyìng'},
-          {hz:'过得不好，想回家', py:'guò de bù hǎo, xiǎng huí jiā'}
-        ], answer:0, vocab:['v_yukuai'] },
+          {hz:'过得很紧张，不适应', py:'guò de hěn jǐnzhāng, bú shìyìng'}
+        ], answer:1, vocab:['v_yukuai'] },
     ]
   },
   {
@@ -783,10 +783,10 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'A: 从北京到巴黎得坐多长时间的飞机？ B: ___', py:'',
         options:[
-          {hz:'时间不太长，坐十几个小时就到了。', py:'Shíjiān bú tài cháng, zuò shíjǐ ge xiǎoshí jiù dào le.'},
+          {hz:'我不知道飞机什么时候到。', py:'Wǒ bù zhīdào fēijī shénme shíhou dào.'},
           {hz:'时间很长，坐十几分钟就到了。', py:'Shíjiān hěn cháng, zuò shíjǐ fēnzhōng jiù dào le.'},
-          {hz:'我不知道飞机什么时候到。', py:'Wǒ bù zhīdào fēijī shénme shíhou dào.'}
-        ], answer:0, vocab:['v_xiaoshi'] },
+          {hz:'时间不太长，坐十几个小时就到了。', py:'Shíjiān bú tài cháng, zuò shíjǐ ge xiǎoshí jiù dào le.'}
+        ], answer:2, vocab:['v_xiaoshi'] },
     ]
   },
   {
@@ -794,10 +794,10 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'西蒙八点十分___来。 (Chọn từ đúng)', py:'',
         options:[
+          {hz:'都', py:'dōu'},
           {hz:'才', py:'cái'},
-          {hz:'就', py:'jiù'},
-          {hz:'都', py:'dōu'}
-        ], answer:0, vocab:['v_cai'] },
+          {hz:'就', py:'jiù'}
+        ], answer:1, vocab:['v_cai'] },
     ]
   },
   {
@@ -805,10 +805,10 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'虽然这个房间有空调，___。 (Chọn vế câu đúng để hoàn thành)', py:'',
         options:[
-          {hz:'但是还是很热。', py:'dànshì háishi hěn rè.'},
+          {hz:'所以我很喜欢。', py:'suǒyǐ wǒ hěn xǐhuan.'},
           {hz:'但是非常安静。', py:'dànshì fēicháng ānjìng.'},
-          {hz:'所以我很喜欢。', py:'suǒyǐ wǒ hěn xǐhuan.'}
-        ], answer:0, vocab:['v_anjing'] },
+          {hz:'但是还是很热。', py:'dànshì háishi hěn rè.'}
+        ], answer:2, vocab:['v_anjing'] },
     ]
   },
   {
@@ -817,8 +817,8 @@ const QUESTION_GROUPS = [
       { hz:'因为身体不好，___。 (Chọn vế câu đúng để hoàn thành)', py:'',
         options:[
           {hz:'这几天他正在家里休息。', py:'zhè jǐ tiān tā zhèngzài jiā lǐ xiūxi.'},
-          {hz:'所以他很开心。', py:'suǒyǐ tā hěn kāixīn.'},
-          {hz:'但是他很累。', py:'dànshì tā hěn lèi.'}
+          {hz:'但是他很累。', py:'dànshì tā hěn lèi.'},
+          {hz:'所以他很开心。', py:'suǒyǐ tā hěn kāixīn.'}
         ], answer:0, vocab:[] },
     ]
   },

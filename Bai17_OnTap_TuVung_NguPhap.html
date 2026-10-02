@@ -457,16 +457,16 @@
               星期天我和莉莉一起去
               <select class="blank-select" data-blank="b1">
                 <option value="" selected>－选－</option>
-                <option value="0">买 (mǎi)</option>
-                <option value="1">逛 (guàng)</option>
-                <option value="2">穿 (chuān)</option>
+                <option value="0">逛 (guàng)</option>
+                <option value="1">穿 (chuān)</option>
+                <option value="2">买 (mǎi)</option>
               </select>
               街，商店里的衣服
               <select class="blank-select" data-blank="b2">
                 <option value="" selected>－选－</option>
                 <option value="0">一直 (yìzhí)</option>
-                <option value="1">正在 (zhèngzài)</option>
-                <option value="2">特别 (tèbié)</option>
+                <option value="1">特别 (tèbié)</option>
+                <option value="2">正在 (zhèngzài)</option>
               </select>
               美，莉莉买了三件衬衫、两条裙子，还有一顶帽子。
             </div>
@@ -478,16 +478,16 @@
               听说小雨
               <select class="blank-select" data-blank="b3">
                 <option value="" selected>－选－</option>
-                <option value="0">忙 (máng)</option>
-                <option value="1">病 (bìng)</option>
+                <option value="0">病 (bìng)</option>
+                <option value="1">忙 (máng)</option>
                 <option value="2">累 (lèi)</option>
               </select>
               了，我们打算抽
               <select class="blank-select" data-blank="b4">
                 <option value="" selected>－选－</option>
-                <option value="0">工作 (gōngzuò)</option>
-                <option value="1">时间 (shíjiān)</option>
-                <option value="2">衣服 (yīfu)</option>
+                <option value="0">衣服 (yīfu)</option>
+                <option value="1">工作 (gōngzuò)</option>
+                <option value="2">时间 (shíjiān)</option>
               </select>
               去看看她。
             </div>
@@ -500,8 +500,8 @@
               <select class="blank-select" data-blank="b5">
                 <option value="" selected>－选－</option>
                 <option value="0">正在 (zhèngzài)</option>
-                <option value="1">还没 (hái méi)</option>
-                <option value="2">已经 (yǐjīng)</option>
+                <option value="1">已经 (yǐjīng)</option>
+                <option value="2">还没 (hái méi)</option>
               </select>
               告诉小雨了，她知道我们要去看她，特别高兴。
             </div>
@@ -513,9 +513,9 @@
               医院附近的风景很美，我们打算
               <select class="blank-select" data-blank="b6">
                 <option value="" selected>－选－</option>
-                <option value="0">找 (zhǎo)</option>
-                <option value="1">陪 (péi)</option>
-                <option value="2">等 (děng)</option>
+                <option value="0">等 (děng)</option>
+                <option value="1">找 (zhǎo)</option>
+                <option value="2">陪 (péi)</option>
               </select>
               她以后一起去公园走走。
             </div>
@@ -689,12 +689,12 @@ const VOCAB = {
 
 /* ===================== DỮ LIỆU CÁC BLANK TRONG ĐOẠN VĂN 1.1 ===================== */
 const BLANKS = [
-  { id:'b1', answer:1, vocab:['v_guang'] },
-  { id:'b2', answer:2, vocab:['v_tebie'] },
-  { id:'b3', answer:1, vocab:['v_bing'] },
-  { id:'b4', answer:1, vocab:['v_chou','v_shijian'] },
-  { id:'b5', answer:2, vocab:['v_yijing'] },
-  { id:'b6', answer:1, vocab:['v_pei'] },
+  { id:'b1', answer:0, vocab:['v_guang'] },
+  { id:'b2', answer:1, vocab:['v_tebie'] },
+  { id:'b3', answer:0, vocab:['v_bing'] },
+  { id:'b4', answer:2, vocab:['v_chou','v_shijian'] },
+  { id:'b5', answer:1, vocab:['v_yijing'] },
+  { id:'b6', answer:2, vocab:['v_pei'] },
 ];
 
 /* ===================== CÁC NHÓM CÂU HỎI (MCQ) ===================== */
@@ -704,22 +704,22 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'莉莉在商店买了什么？', py:'Lìlì zài shāngdiàn mǎile shénme?',
         options:[
-          {hz:'三件衬衫、两条裙子和一顶帽子', py:'sān jiàn chènshān, liǎng tiáo qúnzi hé yì dǐng màozi'},
+          {hz:'一本书', py:'yì běn shū'},
           {hz:'一只烤鸭', py:'yì zhī kǎoyā'},
-          {hz:'一本书', py:'yì běn shū'}
-        ], answer:0, vocab:['v_qunzi','v_maozi'] },
+          {hz:'三件衬衫、两条裙子和一顶帽子', py:'sān jiàn chènshān, liǎng tiáo qúnzi hé yì dǐng màozi'}
+        ], answer:2, vocab:['v_qunzi','v_maozi'] },
       { hz:'我们为什么要去看小雨？', py:'Wǒmen wèishénme yào qù kàn Xiǎoyǔ?',
         options:[
           {hz:'因为她病了', py:'yīnwèi tā bìng le'},
-          {hz:'因为她很忙', py:'yīnwèi tā hěn máng'},
-          {hz:'因为她要旅行', py:'yīnwèi tā yào lǚxíng'}
+          {hz:'因为她要旅行', py:'yīnwèi tā yào lǚxíng'},
+          {hz:'因为她很忙', py:'yīnwèi tā hěn máng'}
         ], answer:0, vocab:['v_bing','v_kan'] },
       { hz:'我们打算怎么去看小雨？', py:'Wǒmen dǎsuàn zěnme qù kàn Xiǎoyǔ?',
         options:[
-          {hz:'抽时间一起去', py:'chōu shíjiān yìqǐ qù'},
+          {hz:'下个星期去', py:'xià ge xīngqī qù'},
           {hz:'明天早上一个人去', py:'míngtiān zǎoshang yí ge rén qù'},
-          {hz:'下个星期去', py:'xià ge xīngqī qù'}
-        ], answer:0, vocab:['v_chou','v_shijian'] },
+          {hz:'抽时间一起去', py:'chōu shíjiān yìqǐ qù'}
+        ], answer:2, vocab:['v_chou','v_shijian'] },
     ]
   },
   {
@@ -727,10 +727,10 @@ const QUESTION_GROUPS = [
     questions:[
       { hz:'Sắp xếp thành câu đúng từ các từ: 了 / 三件 / 衬衫 / 买 / 她', py:'',
         options:[
-          {hz:'她买了三件衬衫。', py:'Tā mǎile sān jiàn chènshān.'},
           {hz:'了她买三件衬衫。', py:'Le tā mǎi sān jiàn chènshān.'},
+          {hz:'她买了三件衬衫。', py:'Tā mǎile sān jiàn chènshān.'},
           {hz:'她三件衬衫买了。', py:'Tā sān jiàn chènshān mǎi le.'}
-        ], answer:0, vocab:['v_le'] },
+        ], answer:1, vocab:['v_le'] },
     ]
   },
   {
@@ -739,8 +739,8 @@ const QUESTION_GROUPS = [
       { hz:'我们到了上海，___。 (Chọn vế câu đúng để hoàn thành)', py:'',
         options:[
           {hz:'就给你打电话。', py:'jiù gěi nǐ dǎ diànhuà.'},
-          {hz:'正在给你打电话。', py:'zhèngzài gěi nǐ dǎ diànhuà.'},
-          {hz:'已经给你打电话了。', py:'yǐjīng gěi nǐ dǎ diànhuà le.'}
+          {hz:'已经给你打电话了。', py:'yǐjīng gěi nǐ dǎ diànhuà le.'},
+          {hz:'正在给你打电话。', py:'zhèngzài gěi nǐ dǎ diànhuà.'}
         ], answer:0, vocab:['v_le'] },
     ]
   },
