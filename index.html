@@ -115,7 +115,7 @@ body{margin:0;background:#d2e6e7}
     <nav class="muc-luc">
       <a class="muc" href="#bai-hoc"><span class="chu">课</span><span class="giua"><div class="ten">Bài học</div><div class="ta">Bài khóa có phiên âm, từ mới, ngữ pháp và bài tập trong sách</div></span><span class="so">15 bài</span><span class="mui">→</span></a>
       <a class="muc" href="#bai-tap"><span class="chu">练</span><span class="giua"><div class="ten">Bài tập</div><div class="ta">Ôn tập từ vựng và ngữ pháp theo từng bài</div></span><span class="so">15 bài</span><span class="mui">→</span></a>
-      <a class="muc" href="OnTapTongHop_Bai16-30.html" data-u="T16_30"><span class="chu">总</span><span class="giua"><div class="ten">Ôn tập tổng hợp</div><div class="ta">Ôn từ vựng · Ôn ngữ pháp · Bài tập tổng hợp (Bài 16–30)</div></span><span class="mui">→</span></a>
+      <a class="muc" href="#on-tap"><span class="chu">总</span><span class="giua"><div class="ten">Ôn tập tổng hợp</div><div class="ta">Ôn từ vựng, ngữ pháp, bài tập tổng hợp và 5 đề tài luyện nói (Bài 16–30)</div></span><span class="so">2 mục</span><span class="mui">→</span></a>
       <a class="muc" href="TrongDiemNguPhap_PhanBiet.html" data-u="T16_30"><span class="chu">辨</span><span class="giua"><div class="ten">Ngữ pháp trọng điểm</div><div class="ta">Phân biệt các điểm ngữ pháp dễ nhầm lẫn</div></span><span class="mui">→</span></a>
     </nav>
   </section>
@@ -134,6 +134,19 @@ body{margin:0;background:#d2e6e7}
     <div class="dau-muc"><span class="han">练</span><h2>Bài tập</h2></div>
     <p class="ghi">Chọn một bài để ôn tập từ vựng và ngữ pháp.</p>
     <div class="ds" id="ds-bai-tap"></div>
+  </section>
+
+  <!-- ===== ÔN TẬP TỔNG HỢP ===== -->
+  <section id="man-on-tap" hidden>
+    <a class="lui" href="#" role="button">← Quay lại</a>
+    <div class="dau-muc"><span class="han">总</span><h2>Ôn tập tổng hợp</h2></div>
+    <p class="ghi">Ôn tập cuối khóa Bài 16 – Bài 30.</p>
+    <div class="ds">
+      <a class="bai-muc" href="OnTapTongHop_Bai16-30.html" data-u="T16_30"><span class="stt"><b>温</b>Ôn</span>
+        <span><div class="hz" lang="zh">综合复习</div><div class="vn">Ôn từ vựng · Ôn ngữ pháp · Bài tập tổng hợp</div></span><span class="mui">→</span></a>
+      <a class="bai-muc" href="5-de-tai-noi-on-tap-cuoi-khoa.html" data-u="T16_30"><span class="stt"><b>说</b>Nói</span>
+        <span><div class="hz" lang="zh">口语五题</div><div class="vn">5 đề tài luyện nói · Nghe &amp; nói theo · Bài nói mẫu</div></span><span class="mui">→</span></a>
+    </div>
   </section>
 </main>
 
@@ -174,7 +187,7 @@ function veDanhSach(id, tenFile, boQua){
 veDanhSach('ds-bai-hoc', FILE_BAI_HOC, CHUA_CO_BAI_HOC);
 veDanhSach('ds-bai-tap', FILE_BAI_TAP);
 
-const MAN = {'':'man-chinh', '#bai-hoc':'man-bai-hoc', '#bai-tap':'man-bai-tap'};
+const MAN = {'':'man-chinh', '#bai-hoc':'man-bai-hoc', '#bai-tap':'man-bai-tap', '#on-tap':'man-on-tap'};
 function hienMan(){
   const dich = MAN[location.hash] || 'man-chinh';
   Object.values(MAN).forEach(id => { document.getElementById(id).hidden = (id !== dich); });
