@@ -499,7 +499,7 @@ footer.credit{max-width:852px;margin:14px auto 0;text-align:center;font:500 14px
 @media(max-width:560px){.passage-hanzi{font-size:21px;line-height:2.35}.answer-reveal .hz,.grammar-box .example,.q-prompt .hz{font-size:20px}.option .opt-text .hz{font-size:19px}}
 </style>
 </head>
-<body>
+<body><div class="gy-root">
 <div class="bai-bg"></div>
 
 <div id="screen-quiz">
@@ -1364,5 +1364,8 @@ if(typeof goc==='function'){
 }
 })();
 </script>
+</div>
+<!-- GY-TOOLS loader v1 · công cụ giáo viên dùng chung (chỉ tải trên máy đã bật ?gv=1) -->
+<script>(function(){try{var q=location.search.match(/[?&]gv=([01])/);if(q)localStorage.setItem('gy-teacher',q[1]);if(localStorage.getItem('gy-teacher')!=='1')return;}catch(e){return;}var s=document.createElement('script');s.src='https://guangyuhanyu.github.io/gy-tools.js?t='+Math.floor(Date.now()/6e5);(document.head||document.documentElement).appendChild(s);})();</script>
 </body>
 </html>
